@@ -1,0 +1,18 @@
+Environment
+
+Ruby 1.9.2-p180
+Rails 3.0.9
+
+Database : development - sqlite
+
+Setup :
+
+gem install bundler
+bundle install
+Development database bundled 
+
+Admin URL: localhost:3000/admin
+Username : admin@example.com
+Password : password
+
+

@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @webcast.title %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <% videotron = UnvlogIt.new(@webcast.link) %>
+
+<%= videotron.embed_html(400, 300) %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @webcast.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_webcast_path(@webcast) %> |
+<%= link_to 'Back', webcasts_path %>
