@@ -8,6 +8,7 @@ gem 'rails', '3.0.9'
 gem 'sqlite3'
 gem "acts_as_unvlogable"
 gem 'devise'
+gem 'recaptcha', :require => 'recaptcha/rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'

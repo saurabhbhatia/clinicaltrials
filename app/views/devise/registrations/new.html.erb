@@ -3,7 +3,14 @@
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
+<p><%= f.label :name %><br />
+  <%= f.text_field :name %></p>
 
+<p><%= f.label :phone %><br />
+  <%= f.text_field :phone %></p>
+
+<p><%= f.label :specialization %><br />
+  <%= f.text_field :specialization %></p>
 
 
   <p><%= f.label :email %><br />
@@ -14,6 +21,8 @@
 
   <p><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></p>
+
+  <p><%= recaptcha_tags %></p>
 
   <p><%= f.submit "Sign up" %></p>
 <% end %>
