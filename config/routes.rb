@@ -1,4 +1,13 @@
 Glenmark::Application.routes.draw do
+
+  resources :updates
+
+  resources :conference_calendars
+
+  resources :trials
+
+  resources :drug_infos
+
   resources :banners
 
   devise_for :users

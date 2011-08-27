@@ -1,0 +1,29 @@
+<h1>Listing conference_calendars</h1>
+
+<table>
+  <tr>
+    <th>Event name</th>
+    <th>Event description</th>
+    <th>Event date</th>
+    <th>Who should attend</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @conference_calendars.each do |conference_calendar| %>
+  <tr>
+    <td><%= conference_calendar.event_name %></td>
+    <td><%= conference_calendar.event_description %></td>
+    <td><%= conference_calendar.event_date %></td>
+    <td><%= conference_calendar.who_should_attend %></td>
+    <td><%= link_to 'Show', conference_calendar %></td>
+    <td><%= link_to 'Edit', edit_conference_calendar_path(conference_calendar) %></td>
+    <td><%= link_to 'Destroy', conference_calendar, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Conference calendar', new_conference_calendar_path %>

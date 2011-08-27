@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @drug_info.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @drug_info.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_drug_info_path(@drug_info) %> |
+<%= link_to 'Back', drug_infos_path %>

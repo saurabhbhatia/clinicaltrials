@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Event name:</b>
+  <%= @conference_calendar.event_name %>
+</p>
+
+<p>
+  <b>Event description:</b>
+  <%= @conference_calendar.event_description %>
+</p>
+
+<p>
+  <b>Event date:</b>
+  <%= @conference_calendar.event_date %>
+</p>
+
+<p>
+  <b>Who should attend:</b>
+  <%= @conference_calendar.who_should_attend %>
+</p>
+
+
+<%= link_to 'Edit', edit_conference_calendar_path(@conference_calendar) %> |
+<%= link_to 'Back', conference_calendars_path %>

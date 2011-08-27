@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110823223846) do
+ActiveRecord::Schema.define(:version => 20110827104659) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -54,6 +54,56 @@ ActiveRecord::Schema.define(:version => 20110823223846) do
     t.string   "banner_content_type"
     t.integer  "banner_file_size"
     t.datetime "banner_updated_at"
+  end
+
+  create_table "conference_calendars", :force => true do |t|
+    t.string   "event_name"
+    t.text     "event_description"
+    t.date     "event_date"
+    t.text     "who_should_attend"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "drug_infos", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "glenmark_news", :force => true do |t|
+    t.string   "title"
+    t.text     "overview"
+    t.text     "description"
+    t.text     "references"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "news", :force => true do |t|
+    t.string   "title"
+    t.text     "overview"
+    t.text     "description"
+    t.text     "references"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "trials", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "updates", :force => true do |t|
+    t.string   "title"
+    t.text     "overview"
+    t.text     "description"
+    t.text     "references"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

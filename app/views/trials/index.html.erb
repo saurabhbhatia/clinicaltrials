@@ -1,0 +1,25 @@
+<h1>Listing trials</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @trials.each do |trial| %>
+  <tr>
+    <td><%= trial.title %></td>
+    <td><%= trial.description %></td>
+    <td><%= link_to 'Show', trial %></td>
+    <td><%= link_to 'Edit', edit_trial_path(trial) %></td>
+    <td><%= link_to 'Destroy', trial, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Trial', new_trial_path %>

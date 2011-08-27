@@ -1,0 +1,33 @@
+<%= form_for(@conference_calendar) do |f| %>
+  <% if @conference_calendar.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@conference_calendar.errors.count, "error") %> prohibited this conference_calendar from being saved:</h2>
+
+      <ul>
+      <% @conference_calendar.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :event_name %><br />
+    <%= f.text_field :event_name %>
+  </div>
+  <div class="field">
+    <%= f.label :event_description %><br />
+    <%= f.text_area :event_description %>
+  </div>
+  <div class="field">
+    <%= f.label :event_date %><br />
+    <%= f.date_select :event_date %>
+  </div>
+  <div class="field">
+    <%= f.label :who_should_attend %><br />
+    <%= f.text_area :who_should_attend %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

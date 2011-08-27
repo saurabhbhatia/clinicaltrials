@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  event_name: MyString
+  event_description: MyText
+  event_date: 2011-08-27
+  who_should_attend: MyText
+
+two:
+  event_name: MyString
+  event_description: MyText
+  event_date: 2011-08-27
+  who_should_attend: MyText

@@ -1,0 +1,2 @@
+module GlenmarkNewsHelper
+end
