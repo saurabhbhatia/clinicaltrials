@@ -13,7 +13,7 @@
 <% @webcasts.each do |webcast| %>
   <tr>
     <td><%= webcast.title %></td>
-    <td><% videotron = UnvlogIt.new(webcast.link) %><%= videotron.embed_html(133, 118) %></td>
+    <td><% videotron = UnvlogIt.new(webcast.link) %><%= videotron.embed_html(133, 118).html_safe %></td>
     <td><%= webcast.description %></td>
     <td><%= link_to 'Show', webcast %></td>
     <td><%= link_to 'Edit', edit_webcast_path(webcast) %></td>

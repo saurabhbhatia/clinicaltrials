@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -6,7 +7,7 @@
 </p>
 
  <p><% videotron = UnvlogIt.new(@webcast.link) %>
-  <%= videotron.embed_html(300, 266) %></p>
+  <%= videotron.embed_html(300, 266).html_safe %></p>
 
 
 <p>
