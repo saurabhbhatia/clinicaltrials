@@ -134,7 +134,8 @@ DEPENDENCIES
   activeadmin
   acts_as_unvlogable
   devise
-  paperclip (~> 2.3)
+  mime-types
+  paperclip
   rails (= 3.0.9)
   recaptcha
   sqlite3
