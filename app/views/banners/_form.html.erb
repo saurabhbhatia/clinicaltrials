@@ -1,4 +1,4 @@
-<%= form_for(@banner) do |f| %>
+<%= form_for(@banner, :html => { :multipart => true }) do |f| %>
   <% if @banner.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@banner.errors.count, "error") %> prohibited this banner from being saved:</h2>
