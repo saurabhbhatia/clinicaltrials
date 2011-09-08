@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110827104659) do
+ActiveRecord::Schema.define(:version => 20110908131331) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -70,6 +70,9 @@ ActiveRecord::Schema.define(:version => 20110827104659) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "attachment_drug_file_name"
+    t.string   "attachment_drug_content_type"
+    t.integer  "attachment_drug_file_size"
   end
 
   create_table "glenmark_news", :force => true do |t|
@@ -95,6 +98,9 @@ ActiveRecord::Schema.define(:version => 20110827104659) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
   end
 
   create_table "updates", :force => true do |t|

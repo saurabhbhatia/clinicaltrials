@@ -1,4 +1,4 @@
-<%= form_for(@trial) do |f| %>
+<%= form_for(@trial, :html => { :multipart => true }) do |f| %>
   <% if @trial.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@trial.errors.count, "error") %> prohibited this trial from being saved:</h2>
@@ -18,6 +18,9 @@
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
+  </div>
+<div class="field">
+  <%= f.file_field :attachment %>
   </div>
   <div class="actions">
     <%= f.submit %>

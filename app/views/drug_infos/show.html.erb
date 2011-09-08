@@ -10,6 +10,10 @@
   <%= @drug_info.description %>
 </p>
 
+<p>
+<%= link_to @drug_info.attachment_drug_file_name, @drug_info.attachment_drug.url  %>
+</p>
+
 
 <%= link_to 'Edit', edit_drug_info_path(@drug_info) %> |
 <%= link_to 'Back', drug_infos_path %>
