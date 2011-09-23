@@ -6,7 +6,8 @@ gem 'will_paginate', '~> 3.0.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
   gem 'activeadmin'
-gem 'sqlite3'
+#gem 'sqlite3'
+gem 'mysql'
 gem "acts_as_unvlogable"
 gem 'devise'
 gem 'recaptcha', :require => 'recaptcha/rails'
