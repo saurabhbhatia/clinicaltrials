@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Topic:</b>
+  <%= @event.topic %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @event.date %>
+</p>
+
+<p>
+  <b>Organization:</b>
+  <%= @event.organization %>
+</p>
+
+<p>
+  <b>More info:</b>
+  <%= @event.more_info %>
+</p>
+
+<p>
+  <b>Location:</b>
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=14&markers=#{@event.latitude}%2C#{@event.longitude}" %>
+</p>
+
+
+<%= link_to 'Edit', edit_event_path(@event) %> |
+<%= link_to 'Back', events_path %>

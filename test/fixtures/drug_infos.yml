@@ -2,8 +2,12 @@
 
 one:
   title: MyString
-  description: MyText
+  action: MyText
+  indications: MyText
+  interaction: MyText
 
 two:
   title: MyString
-  description: MyText
+  action: MyText
+  indications: MyText
+  interaction: MyText

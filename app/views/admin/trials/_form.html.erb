@@ -1,0 +1,6 @@
+  <%= semantic_form_for [:admin, @trial] do |f| %>
+    <%= f.inputs :title, :description%>
+
+  <%= f.file_field :attachment %>
+    <%= f.buttons :commit %>
+  <% end %>

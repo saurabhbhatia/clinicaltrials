@@ -1,0 +1,29 @@
+<%= sementic_form_for [:admin, @webcast] do |f| %>
+  <% if @webcast.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@webcast.errors.count, "error") %> prohibited this webcast from being saved:</h2>
+
+      <ul>
+      <% @webcast.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :link %><br />
+    <%= f.text_field :link %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

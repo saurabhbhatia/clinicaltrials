@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
+gem 'will_paginate', '~> 3.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -10,7 +11,9 @@ gem "acts_as_unvlogable"
 gem 'devise'
 gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'mime-types', :require => 'mime/types'
-
+gem 'ckeditor', '3.5.0'
+gem "friendly_id", "~> 4.0.0.beta8"
+gem "geocoder"
 
 # Use unicorn as the web server
 # gem 'unicorn'

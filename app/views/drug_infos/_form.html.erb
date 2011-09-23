@@ -1,4 +1,4 @@
-<%= form_for(@drug_info, :html => { :multipart => true }) do |f| %>
+<%= form_for(@drug_info) do |f| %>
   <% if @drug_info.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@drug_info.errors.count, "error") %> prohibited this drug_info from being saved:</h2>
@@ -16,12 +16,21 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.label :action %><br />
+    <%= f.text_area :action %>
+  </div>
+  <div class="field">
+    <%= f.label :indications %><br />
+    <%= f.text_area :indications %>
+  </div>
+  <div class="field">
+    <%= f.label :interaction %><br />
+    <%= f.text_area :interaction %>
   </div>
 <div class="field">
   <%= f.file_field :attachment_drug %>
-  </div>
+</div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

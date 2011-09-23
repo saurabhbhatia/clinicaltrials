@@ -1,5 +1,9 @@
 Glenmark::Application.routes.draw do
 
+  resources :events
+
+  resources :pages
+
   resources :updates
 
   resources :conference_calendars
@@ -11,7 +15,7 @@ Glenmark::Application.routes.draw do
   resources :banners
 
   devise_for :users
-
+ 
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config

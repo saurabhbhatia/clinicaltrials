@@ -1,25 +1,6 @@
-<h1>Listing drug_infos</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @drug_infos.each do |drug_info| %>
-  <tr>
-    <td><%= drug_info.title %></td>
-    <td><%= drug_info.description %></td>
-    <td><%= link_to 'Show', drug_info %></td>
-    <td><%= link_to 'Edit', edit_drug_info_path(drug_info) %></td>
-    <td><%= link_to 'Destroy', drug_info, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<div><% @drug_info.keys.sort.each do |starting_letter| %>
+  <%= starting_letter %></div>
+  <div><% @drug_info[starting_letter].each do |drug| %>
+    <td><%= link_to "#{drug.title}", drug %></td> 
+  <% end %></div>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Drug info', new_drug_info_path %>
