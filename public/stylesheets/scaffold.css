@@ -54,3 +54,34 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+#nav
+{
+    padding:0;
+}
+#nav li 
+{
+    display:inline;
+}
+#nav li a 
+{   
+   font-family:Arial;
+   font-size:12px;
+   text-decoration: none;
+   float:left;
+   padding:10px;
+   background-color: #333333;
+   color:#ffffff;
+   border-bottom:1px;
+   border-bottom-color:#000000;
+   border-bottom-style:solid;
+}
+#nav li a:hover 
+{
+   background-color:#9B1C26;
+   padding-bottom:12px;
+   border-bottom:2px;
+   border-bottom-color:#000000;
+   border-bottom-style:solid;
+   margin:-1px;
+}
