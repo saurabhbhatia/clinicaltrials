@@ -1,6 +1,15 @@
 ActiveAdmin.register Banner do
-index :as => :grid do |banner|
-
-    link_to(image_tag(banner.banner.url(:medium)), admin_banner_path(banner))
-  end  
+#custom form 
+form :partial => "form"
+#custom show for banner
+show do
+  render "show"
+end
+#cusotm index
+index do
+  column :title
+  column :description
+  column :banner_file_name
+  default_actions
+end
 end

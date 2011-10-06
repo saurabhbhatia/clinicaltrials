@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @trial.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @trial.description %>
+</p>
+
+<p>
+<%= link_to @trial.attachment_file_name, @trial.attachment.url  %>
+</p>
+
+<%= link_to 'Edit', edit_trial_path(@trial) %> |
+<%= link_to 'Back', trials_path %>

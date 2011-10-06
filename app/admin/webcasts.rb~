@@ -1,0 +1,7 @@
+ActiveAdmin.register Webcast do
+  index do
+   column :title
+   column :link
+   column :description
+  end
+end

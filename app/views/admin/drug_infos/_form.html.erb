@@ -1,0 +1,8 @@
+  <%= semantic_form_for [:admin, @drug_info] do |f| %>
+    <%= f.inputs :title, :action, :indications, :interaction%>
+
+  <%= f.file_field :attachment_drug %>
+    <%= f.buttons :commit %>
+  <% end %>
+
+

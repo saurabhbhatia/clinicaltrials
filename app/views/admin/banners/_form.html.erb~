@@ -1,0 +1,12 @@
+  <%= semantic_form_for [:admin, @banner] do |f| %>
+    <%= f.inputs :title%>
+    <%= f.cktext_area :description, :toolbar=>'Full', :width=>'800px', :height=>'200px' %>
+
+  <%= f.file_field :banner %>
+    <%= f.buttons :commit %>
+  <% end %>
+
+
+
+
+

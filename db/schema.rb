@@ -167,7 +167,7 @@ ActiveRecord::Schema.define(:version => 20110922134052) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.integer  "phone"
+    t.string   "phone"
     t.string   "specialization"
   end
 

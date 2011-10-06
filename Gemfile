@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
 gem 'will_paginate', '~> 3.0.0'
-
+gem 'rmagick'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
   gem 'activeadmin'
@@ -12,7 +12,8 @@ gem "acts_as_unvlogable"
 gem 'devise'
 gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'mime-types', :require => 'mime/types'
-gem 'ckeditor', '3.5.0'
+gem 'ckeditor', :git => 'git://github.com/galetahub/rails-ckeditor.git', :branch => 'rails3'
+gem 'formtastic'
 gem "friendly_id", "~> 4.0.0.beta8"
 gem "geocoder"
 
