@@ -1,4 +1,6 @@
-body { background-color: #fff; color: #333; }
+body { background-color: #ffbe23; color: #fff; }
+
+.container {  background: #fff; color:#5a5a5a; padding:50px; border-radius: 4px 4px 4px 4px; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -85,3 +87,17 @@ div.field, div.actions {
    border-bottom-style:solid;
    margin:-1px;
 }
+
+input[type="text"], input[type="password"], input[type="email"]  {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #BCBBBB;
+    border-radius: 2em 2em 2em 2em;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset;
+    outline: medium none;
+    padding: 6px 6px 6px 8px;
+    width: 250px;	
+}
+
+h1, h2, h3, h4, h5, h6 { color:#ce4e00; display:block; width:100%; }
+
+ul.nav { display:block; height:20px; }
