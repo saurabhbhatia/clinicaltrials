@@ -16,6 +16,7 @@ gem 'ckeditor', :git => 'git://github.com/galetahub/rails-ckeditor.git', :branch
 gem 'formtastic'
 gem "friendly_id", "~> 4.0.0.beta8"
 gem "geocoder"
+gem 'paginate_alphabetically', git: 'git://github.com/edendevelopment/paginate_alphabetically.git', branch: 'bundler'
 
 # Use unicorn as the web server
 # gem 'unicorn'
