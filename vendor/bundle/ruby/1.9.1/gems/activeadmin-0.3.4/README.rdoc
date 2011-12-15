@@ -1,0 +1,113 @@
+= Active Admin
+
+Active Admin is a framework for creating administration style interfaces. It
+abstracts common business application patterns to make it simple for developers
+to implement beautiful and elegant interfaces with very little effort.
+
+{<img src="http://travis-ci.org/gregbell/active_admin.png" />}[http://travis-ci.org/gregbell/active_admin]
+
+== Help / Support / Demo
+
+* Documentation & Guides: http://activeadmin.info/documentation.html
+* Mailing list: http://groups.google.com/group/activeadmin
+* Bug reports: https://github.com/gregbell/active_admin/issues
+* RDoc: http://rubydoc.info/github/gregbell/active_admin/master/frames
+* Live demo: http://demo.activeadmin.info/admin
+* Website: http://www.activeadmin.info
+
+
+== Goals
+
+1. Allow developers to quickly create gorgeous administration interfaces
+   <strong>(Not Just CRUD)</strong>
+2. Build a DSL for developers and an interface for businesses.
+3. Ensure that developers can easily customize every nook and cranny of the interface.
+4. Build common interfaces as shareable gems so that the entire community benefits.
+
+
+== Getting Started
+
+Active Admin is released as a Ruby Gem. The gem is to be installed within a Ruby
+on Rails 3 application. To install, simply add the following to your Gemfile:
+
+  # Gemfile in Rails < 3.1
+  gem 'activeadmin'
+
+If you are using Rails >= 3.1, you must also have sass-rails in your Gemfile:
+
+  # Gemfile in Rails >= 3.1
+  gem 'activeadmin'
+  gem 'sass-rails'
+
+After updating your bundle, run the installer
+
+  $> rails generate active_admin:install
+
+The installer creates an initializer used for configuring defaults used by Active Admin as well
+as a new folder at <tt>app/admin</tt> to put all your admin configurations.
+
+Migrate your db and start the server:
+
+  $> rake db:migrate
+  $> rails server
+
+Visit http://localhost:3000/admin and log in using:
+
+* *User*: admin@example.com
+* *Password*: password
+
+Voila! You're on your brand new Active Admin dashboard.
+
+To register your first model, run:
+
+  $> rails generate active_admin:resource [MyModelName]
+
+This creates a file at <tt>app/admin/my_model_names.rb</tt> for configuring the resource.
+Refresh your web browser to see the interface.
+
+
+== Next Steps
+
+The best place to get documentation is at http://activeadmin.info/documentation.html.
+
+To view a sample Active Admin application, checkout http://demo.activeadmin.info
+
+If you have any questions, please email the mailing list at http://groups.google.com/group/activeadmin
+
+
+== Tools Being Used
+
+We believe strongly in not writing code unless we have to, so Active Admin is built using many
+other open source projects:
+
+InheritedResources::
+  Inherited Resources speeds up development by making your controllers inherit all restful
+  actions so you just have to focus on what is important.
+Formtastic::
+  A DSL for semantically building amazing forms.
+Devise::
+  User authentication is done using Devise
+Kaminari::
+  Pagination for rails apps
+Iconic Icons::
+  Excellent SVG icon set designed by P.J. Onori: http://somerandomdude.com/projects/iconic
+
+
+== Roadmap & Issue Tracking
+
+We are using the awesome Github issues! Please submit bugs or features to
+https://github.com/gregbell/active_admin/issues
+
+
+== Note on Patches/Pull Requests
+
+* Fork the project.
+* Make a NEW TOPIC BRANCH, then make your feature addition or bug fix
+* Add specs and cukes for it. This is important so I don't break it in a
+  future version unintentionally.
+* Commit, do not mess with rakefile, version, or history.
+* Send a pull request.
+
+== Copyright
+
+Copyright (c) 2010 Greg Bell, VersaPay Corporation. See LICENSE for details.
