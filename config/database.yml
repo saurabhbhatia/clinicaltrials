@@ -9,10 +9,10 @@ development:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: glenmark
+  database: glenmark_dev
   pool: 5
   username: root
-  password: saurabh
+  password: glenm@rk
   socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
@@ -22,10 +22,10 @@ test:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: glenmark
+  database: glenmark_dev
   pool: 5
   username: root
-  password: saurabh
+  password: glenm@rk
   socket: /var/run/mysqld/mysqld.sock
 
 production:
@@ -35,5 +35,5 @@ production:
   database: glenmark
   pool: 5
   username: root
-  password: saurabh
+  password: glenm@rk
   socket: /var/run/mysqld/mysqld.sock

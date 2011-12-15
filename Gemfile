@@ -12,7 +12,7 @@ gem "acts_as_unvlogable"
 gem 'devise'
 gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'mime-types', :require => 'mime/types'
-gem 'ckeditor', :git => 'git://github.com/galetahub/rails-ckeditor.git', :branch => 'rails3'
+gem 'ckeditor'
 gem 'formtastic'
 gem "friendly_id", "~> 4.0.0.beta8"
 gem "geocoder"

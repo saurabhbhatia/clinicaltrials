@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="robots" content="noindex, nofollow">
+	<%= csrf_meta_tag %>
+	<%= tag(:meta, :name => "ckeditor-path", :content => Ckeditor.relative_path) %>
+  <title><%= I18n.t('page_title', :scope => [:ckeditor]) %></title>
+  <link href="<%= Ckeditor.relative_path %>/ckeditor/filebrowser/stylesheets/uploader.css" type="text/css" rel="stylesheet">
+  <style type="text/css">
+    .gal-holder .gal-item .gal-upload-holder .add {
+	    background: url(<%= Ckeditor.relative_path %>/ckeditor/filebrowser/images/gal_add.png) no-repeat left center;
+    }
+    .gal-more a {
+	    background: url(<%= Ckeditor.relative_path %>/ckeditor/filebrowser/images/gal_more.gif) no-repeat left center;
+    }
+  </style>
+  <% ["jquery.js", "jquery.tmpl.js", "fileuploader.js", "rails.js", "application.js"].each do |js| %>
+    <script src="<%= Ckeditor.relative_path %>/ckeditor/filebrowser/javascripts/<%= js %>" type="text/javascript"></script>
+  <% end %>
+  <script type="text/javascript">
+    var CKEditorFuncNum = $.QueryString["CKEditorFuncNum"];
+	  var CKEditorName = $.QueryString["CKEditor"];
+	  var CKEDITOR = window.opener.CKEDITOR;
+	  var EDITOR = CKEDITOR.instances[CKEditorName];
+  </script>
+</head>
+<body>
+	<%= yield %>
+	<%= render :partial => 'ckeditor/shared/asset_tmpl' %>
+</body>
+</html>

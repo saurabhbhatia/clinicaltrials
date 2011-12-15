@@ -5,14 +5,6 @@ GIT
   specs:
     paginate_alphabetically (0.3.3)
 
-GIT
-  remote: git://github.com/galetahub/rails-ckeditor.git
-  revision: 522049946f6bcd119f830de695bc9d9792641905
-  branch: rails3
-  specs:
-    ckeditor (3.5.4)
-      mime-types (>= 1.16)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -60,6 +52,9 @@ GEM
     arel (2.0.10)
     bcrypt-ruby (3.0.1)
     builder (2.1.2)
+    ckeditor (3.6.3)
+      mime-types (~> 1.16)
+      orm_adapter (~> 0.0.5)
     cocaine (0.2.1)
     devise (1.5.2)
       bcrypt-ruby (~> 3.0)
@@ -70,7 +65,7 @@ GEM
     faraday (0.7.5)
       addressable (~> 2.2.6)
       multipart-post (~> 1.1.3)
-      rack (>= 1.1.0, < 2)
+      rack (< 2, >= 1.1.0)
     fastercsv (1.5.4)
     formtastic (1.2.4)
       actionpack (>= 2.3.7)
@@ -160,7 +155,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   acts_as_unvlogable
-  ckeditor!
+  ckeditor
   devise
   formtastic
   friendly_id (~> 4.0.0.beta8)
