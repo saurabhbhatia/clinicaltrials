@@ -9,7 +9,7 @@ development:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: glenmark_dev
+  database: glenmark_devel
   pool: 5
   username: root
   password: glenm@rk
@@ -22,7 +22,7 @@ test:
   adapter: mysql
   encoding: utf8
   reconnect: false
-  database: glenmark_dev
+  database: glenmark_devel
   pool: 5
   username: root
   password: glenm@rk

@@ -1,5 +1,13 @@
 Glenmark::Application.routes.draw do
 
+  resources :downloads
+
+  get "welcome/index"
+  get 'about_us' => "welcome#about_us", :as => :about_us
+  get 'terms_of_use' => "welcome#terms_of_use", :as => :terms_of_use
+  get 'membership_benefits' => "welcome#membership_benefits", :as => :membership_benefits
+
+
   resources :events
 
   resources :pages
@@ -23,7 +31,7 @@ Glenmark::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :webcasts
-  root :to => "home#index"
+  root :to => "welcome#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111201191509) do
+ActiveRecord::Schema.define(:version => 20111226075748) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -81,6 +81,17 @@ ActiveRecord::Schema.define(:version => 20111201191509) do
     t.text     "who_should_attend"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "downloads", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "download_type"
   end
 
   create_table "drug_infos", :force => true do |t|
@@ -154,8 +165,8 @@ ActiveRecord::Schema.define(:version => 20111201191509) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",                                 :default => "", :null => false
-    t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
+    t.string   "email",                                 :default => "",    :null => false
+    t.string   "encrypted_password",     :limit => 128, :default => "",    :null => false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -175,6 +186,9 @@ ActiveRecord::Schema.define(:version => 20111201191509) do
     t.string   "state"
     t.string   "degree"
     t.string   "last_name"
+    t.string   "specify_institute",                     :default => "N/A"
+    t.string   "specify_specialization",                :default => "N/A"
+    t.string   "specify_degree",                        :default => "N/A"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

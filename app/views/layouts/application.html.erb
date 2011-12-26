@@ -2,7 +2,6 @@
 <html>
 <head>
   <title>Glenmark</title>
-  <%= stylesheet_link_tag :all %>
 	<link rel="stylesheet" type="text/css" href="/stylesheets/blueprint/screen.css" media="screen, projection" />
 	<link rel="stylesheet" type="text/css" href="/stylesheets/blueprint/print.css" media="print" />
 	<!--[if lt IE 8]>
@@ -10,42 +9,41 @@
 	<![endif]-->  
   <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js", "jquery.rails.js", "application.js" %>
 	<script type="text/javascript" src="/javascripts/swfobject.js"></script>
+	<link rel="stylesheet" href="/javascripts/nivo-slider/nivo-slider.css" type="text/css" media="screen" />
+	<script type="text/javascript" src="/javascripts/nivo-slider/jquery.nivo.slider.pack.js"></script>
+	<link rel="stylesheet" href="/javascripts/bgstretcher-2/bgstretcher.css" />
+	<script type="text/javascript" src="/javascripts/bgstretcher-2/bgstretcher.js"></script>
 	<%= javascript_include_tag :ckeditor %>
   <%= csrf_meta_tag %>
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Marvel' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="/mainapp/public/stylesheets/style.css" media="screen, projection" />
 </head>
 <body>
-
-
- 
-
-
+<div id="header" class="container">
+	<div id="logo" class="prepend-top"><a href="/mainapp/public"><img src="/images/logo.png" alt="Iraas" /></a></div>
+	<div id="user-menu">
+		  <% if user_signed_in? %>
+		    Signed in as <%= current_user.email %>. Not you?
+		    <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+		  <% else %>
+		    <%= link_to "Login", new_user_session_path %> | <%= link_to "Register", new_user_registration_path %> (<a href="/mainapp/public/membership_benefits">Membership benefits</a>)
+		  <% end %>	  	  
+	</div>
+	<div id="top-menu" class="prepend-top">
+		<a href="/mainapp/public/">Home</a> <a href="/mainapp/public/about_us">About Us</a> <a href="/mainapp/public/drug_infos">Drug Info</a> <a href="/mainapp/public/trials">Trial Update</a> <a href="/mainapp/public/updates">What's New</a> <a href="">Downloads</a> <a href="/mainapp/public/contact_us">Contact Us</a>
+	</div>
+</div>	
 <div class="container prepend-top">
-	<div id="user_nav">
-
-  <% if user_signed_in? %>
-    Signed in as <%= current_user.email %>. Not you?
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-  <% else %>
-    <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-  <% end %>
-  
-	<ul id="nav">
-	    <li><%= link_to 'Banners', banners_path %></li>
-	    <li><%= link_to 'Drug Info', drug_infos_path %></li>
-	    <li><%= link_to 'Events', events_path %></li>
-	    <li><%= link_to 'Pages', pages_path %></li>
-	    <li><%= link_to 'Trials', trials_path %></li>
-	    <li><%= link_to 'News', updates_path %></li>
-	    <li><%= link_to 'Webcasts', webcasts_path %></li>
-	</ul>
-  
-	</div>
-	
-	<div class="clear">&nbsp;</div>
-	<div id="content">
-		<%= yield %>
-	</div>
-		 
+    <% flash.each do |name, msg| %>
+       <%= content_tag :div, msg, :id => "flash_#{name}" %>
+     <% end %>
+	<%= yield %>
+</div>
+<div id="footer" class="container prepend-top">
+	Copyright &copy; 2012, iRAAS. All rights reserved | <a href="/mainapp/public/terms_of_use">Terms of use</a>
 </div>
 </body>
 </html>
+
+

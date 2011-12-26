@@ -1,8 +1,9 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
-gem 'will_paginate', '~> 3.0.0'
+#gem 'will_paginate', '~> 3.0.0'
 gem 'rmagick'
+gem 'kaminari'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
   gem 'activeadmin'
@@ -16,7 +17,8 @@ gem 'ckeditor'
 gem 'formtastic'
 gem "friendly_id", "~> 4.0.0.beta8"
 gem "geocoder"
-gem 'paginate_alphabetically', git: 'git://github.com/edendevelopment/paginate_alphabetically.git', branch: 'bundler'
+gem 'paginate_alphabetically'
+gem 'contact_us', '~> 0.1.4'
 
 # Use unicorn as the web server
 # gem 'unicorn'

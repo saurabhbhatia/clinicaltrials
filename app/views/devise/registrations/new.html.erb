@@ -1,5 +1,86 @@
 <h2>Sign up</h2>
 
+<script type="text/javascript">
+
+function hide_additional_information_fields() {
+	$('#user_specify_institute').parent().slideUp();
+	$('#user_specify_degree').parent().slideUp();
+	$('#user_specialization').parent().slideDown(); // The behaviour of this fields display properties is the inverse 	
+	$('#user_specify_specialization').parent().slideUp();
+}
+
+function reset_additional_field_values() 
+{
+	// Set 'Specify degree' to 'N/A'
+	$('#user_specify_degree').val('N/A');
+	// Set 'Specify institute' to 'N/A'
+	$('#user_specify_institute').val('N/A');
+	// Set 'Specialization' to ''
+	$('#user_specialization').val('');
+	// Set 'Specify specialization' to 'N/A'
+	$('#user_specify_specialization').val('N/A');
+}
+
+function initialize_additional_fields()
+{
+	var degree = $('#user_degree').val();
+	if(degree == 'Other') {
+		$('#user_specify_degree').parent().slideDown();
+	} else if(degree == 'Student') {
+ 		$('#user_specify_institute').parent().slideDown();
+ 		$('#user_specialization').parent().slideUp();	
+	}
+	
+	var specialization = $('#user_specialization').val();
+	
+}
+
+ $(function() {
+ 	
+ 	hide_additional_information_fields();
+ 	reset_additional_field_values();
+ 	
+ 	$('#user_degree').change(function() {
+ 		hide_additional_information_fields();
+ 		reset_additional_field_values();
+ 		var degree = $(this).val();
+ 		if(degree == 'Other') {
+ 			// 1. Set 'Specify degree' to ''
+ 			// 2. Display 'Specify degree' 			
+ 			$('#user_specify_degree').val('');
+ 			$('#user_specify_degree').parent().slideDown();
+ 			$('#user_specify_degree').focus();
+ 			
+ 		} else if(degree == 'Student') {
+ 			// 1. Set 'Specify Institute' to ''
+ 			// 2. Set 'Specialization' to 'Other'
+ 			// 3. Set 'Specify specialization' to 'Student' 
+ 			// 4. Hide 'Specialization'
+ 			// 5. Display 'Specify institute' 
+ 			$('#user_specify_institute').val('');
+ 			$('#user_specialization').val('Other');
+ 			$('#user_specify_specialization').val('Student');
+ 			$('#user_specify_institute').parent().slideDown();
+ 			$('#user_specialization').parent().slideUp();	
+ 			$('#user_specify_institute').focus();
+ 		} 
+ 	});
+ 	
+ 	$('#user_specialization').change(function() {
+ 		var specialization = $(this).val();
+ 		if(specialization == 'Other') {
+ 			$('#user_specify_specialization').val('');
+ 			$('#user_specify_specialization').parent().slideDown();	
+ 			$('#user_specify_specialization').focus();
+ 		} else {
+ 			$('#user_specify_specialization').val('N/A');
+ 			$('#user_specify_specialization').parent().slideUp();	
+ 		}
+ 	});
+ });
+</script>
+
+
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
@@ -27,9 +108,17 @@
 <p><%= f.label :degree %><br />
 <%= select(:user, :degree, [[''],['M.D.'], ['D.M.'], ['D.N.B'], ['M.B.B.S'],['Student'],['Other']]) %>
 
-<p><%= f.label :specialization %><br />
-<%= select(:user, :specialization, [[''],['Cardiologist'], ['Diabetologist'], ['Consulting Physicial'], ['General Physician'],['Nephrologist'],['Neurologist'],['Student'],['Other']]) %>
+<p><%= f.label "Specify Institution" %><br />
+  <%= f.text_field :specify_institute %></p>
 
+<p><%= f.label "Specify Degree" %><br />
+  <%= f.text_field :specify_degree %></p>
+
+<p><%= f.label :specialization %><br />
+<%= select(:user, :specialization, [[''],['Cardiologist'], ['Diabetologist'], ['Consulting Physicial'], ['General Physician'],['Nephrologist'],['Neurologist'],['Other']]) %>
+
+<p><%= f.label "Specify Specialization" %><br />
+  <%= f.text_field :specify_specialization %></p>
 
   <p><%= f.label :email %><br />
   <%= f.email_field :email %></p>

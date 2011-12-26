@@ -1,6 +1,6 @@
-body { background-color: #ffbe23; color: #fff; }
+body { background: #ffcb05 url(images/bg.jpg) top left repeat-x; color: #fff; }
 
-.container {  background: #fff; color:#5a5a5a; padding:50px; border-radius: 4px 4px 4px 4px; }
+.content {  background: #fff; color:#5a5a5a; padding:50px; border-radius: 4px 4px 4px 4px; }
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;

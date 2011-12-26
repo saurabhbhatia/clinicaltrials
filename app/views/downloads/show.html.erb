@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @download.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @download.description %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @download.download_type %>
+</p>
+
+<p>
+  <b>Attachment file name:</b>
+  <%= @download.attachment_file_name %>
+</p>
+
+<p>
+  <b>Attachment content type:</b>
+  <%= @download.attachment_content_type %>
+</p>
+
+<p>
+  <b>Attachment file size:</b>
+  <%= @download.attachment_file_size %>
+</p>
+
+
+<%= link_to 'Edit', edit_download_path(@download) %> |
+<%= link_to 'Back', downloads_path %>

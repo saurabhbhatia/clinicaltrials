@@ -1,3 +1,5 @@
+<div id="banner" class="prepend-top"><img src="/images/header_sunflowers.jpg" alt="Awaken to health and happiness" /></div>
+<div id="content" class="content prepend-top">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -7,7 +9,7 @@
 
 <p>
   <b>Description:</b>
-  <%= @trial.description %>
+  <%= @trial.description.html_safe %>
 </p>
 
 <p>
@@ -16,3 +18,5 @@
 
 <%= link_to 'Edit', edit_trial_path(@trial) %> |
 <%= link_to 'Back', trials_path %>
+</div>
+

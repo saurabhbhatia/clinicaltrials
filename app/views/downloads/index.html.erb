@@ -1,0 +1,33 @@
+<h1>Listing downloads</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Attachment file name</th>
+    <th>Attachment content type</th>
+    <th>Attachment file size</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @downloads.each do |download| %>
+  <tr>
+    <td><%= download.title %></td>
+    <td><%= download.description %></td>
+    <td><%= download.download_type %></td>
+    <td><%= download.attachment_file_name %></td>
+    <td><%= download.attachment_content_type %></td>
+    <td><%= download.attachment_file_size %></td>
+    <td><%= link_to 'Show', download %></td>
+    <td><%= link_to 'Edit', edit_download_path(download) %></td>
+    <td><%= link_to 'Destroy', download, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Download', new_download_path %>

@@ -1,6 +1,9 @@
-<h1>Editing trial</h1>
+<div id="banner" class="prepend-top"><img src="/images/header_sunflowers.jpg" alt="Awaken to health and happiness" /></div>
+<div id="content" class="content prepend-top">
+	<h1>Editing trial</h1>
+	<%= render 'form' %>
+	<%= link_to 'Show', @trial %> |
+	<%= link_to 'Back', trials_path %>
+</div>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @trial %> |
-<%= link_to 'Back', trials_path %>
