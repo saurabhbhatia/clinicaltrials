@@ -1,0 +1,17 @@
+<div id="banner" class="prepend-top"><img src="/mainapp/public/images/header_sunflowers.jpg" alt="Awaken to health and happiness" /></div>
+<div id="content" class="content prepend-top">
+<h1>Useful Links</h1>
+
+<% @useful_links.each do |useful_link| %>
+<div>
+	<%= useful_link.links.html_safe %>
+</div>
+<!-- <td><%= link_to 'Destroy', useful_link, :confirm => 'Are you sure?', :method => :delete %></td> -->
+<!-- <%= link_to 'Show', useful_link %> -->
+<!-- <%= link_to 'New Useful link', new_useful_link_path %> -->
+<div>
+	<%= link_to 'Edit', edit_useful_link_path(useful_link) %>
+</div>
+<% end %>
+
+</div>

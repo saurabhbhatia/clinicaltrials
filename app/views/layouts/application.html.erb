@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Glenmark</title>
+  <title>iRAAS</title>
 	<link rel="stylesheet" type="text/css" href="/stylesheets/blueprint/screen.css" media="screen, projection" />
 	<link rel="stylesheet" type="text/css" href="/stylesheets/blueprint/print.css" media="print" />
 	<!--[if lt IE 8]>
@@ -11,12 +11,13 @@
 	<script type="text/javascript" src="/javascripts/swfobject.js"></script>
 	<link rel="stylesheet" href="/javascripts/nivo-slider/nivo-slider.css" type="text/css" media="screen" />
 	<script type="text/javascript" src="/javascripts/nivo-slider/jquery.nivo.slider.pack.js"></script>
-	<link rel="stylesheet" href="/javascripts/bgstretcher-2/bgstretcher.css" />
-	<script type="text/javascript" src="/javascripts/bgstretcher-2/bgstretcher.js"></script>
+	<script type="text/javascript" src="/mainapp/public/javascripts/jquery.innerfade.js"></script>
+	
 	<%= javascript_include_tag :ckeditor %>
   <%= csrf_meta_tag %>
   <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Marvel' rel='stylesheet' type='text/css'>
+  <!-- <link href='http://fonts.googleapis.com/css?family=Marvel' rel='stylesheet' type='text/css'> -->
+  <link href='http://fonts.googleapis.com/css?family=Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="/mainapp/public/stylesheets/style.css" media="screen, projection" />
 </head>
 <body>
@@ -31,7 +32,7 @@
 		  <% end %>	  	  
 	</div>
 	<div id="top-menu" class="prepend-top">
-		<a href="/mainapp/public/">Home</a> <a href="/mainapp/public/about_us">About Us</a> <a href="/mainapp/public/drug_infos">Drug Info</a> <a href="/mainapp/public/trials">Trial Update</a> <a href="/mainapp/public/updates">What's New</a> <a href="">Downloads</a> <a href="/mainapp/public/contact_us">Contact Us</a>
+		<a href="/mainapp/public/">Home</a> <a href="/mainapp/public/drug_infos">Drug Info</a> <a href="/mainapp/public/trials">Trial Update</a> <a href="/mainapp/public/updates">CV News</a> <a href="/mainapp/public/downloads">Downloads</a> <a href="/mainapp/public/events">Conference Calendar</a> <a href="/mainapp/public/useful_links">Useful links</a> 
 	</div>
 </div>	
 <div class="container prepend-top">
@@ -41,7 +42,8 @@
 	<%= yield %>
 </div>
 <div id="footer" class="container prepend-top">
-	Copyright &copy; 2012, iRAAS. All rights reserved | <a href="/mainapp/public/terms_of_use">Terms of use</a>
+	Copyright &copy; 2012, iRAAS. All rights reserved<br/>
+	<a href="/mainapp/public/about_us">About Us</a> | <a href="/mainapp/public/terms_of_use">Terms of use</a> | <a href="/mainapp/public/disclaimer">Disclaimer</a>
 </div>
 </body>
 </html>

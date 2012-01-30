@@ -1,5 +1,10 @@
-  <%= semantic_form_for [:admin, @drug_info] do |f| %>
-    <%= f.inputs :title, :action, :indications, :interaction%>
+  <%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
+  <%= semantic_form_for [:admin, @drug_info], :multipart => true do |f| %>
+    <%= f.inputs :title %>
+    <h2> Action</h2> <%= cktext_area_tag("drug_info[:action]", @drug_info.action)%>
+    <h2> Indications</h2> <%= cktext_area_tag("drug_info[:indications]", @drug_info.indications) %>
+    <h2> Interaction</h2> <%= cktext_area_tag("drug_info[:interaction]", @drug_info.interaction) %>
+ 
 
   <%= f.file_field :attachment_drug %>
     <%= f.buttons :commit %>

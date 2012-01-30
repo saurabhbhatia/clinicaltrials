@@ -1,0 +1,38 @@
+<%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
+<%= semantic_form_for(@update) do |f| %>
+  <% if @update.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@update.errors.count, "error") %> prohibited this update from being saved:</h2>
+
+      <ul>
+      <% @update.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :overview %><br />
+    <%= cktext_area_tag("update[:overview]", @update.overview) %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :references %><br />
+    <%= f.text_area :references %>
+  </div>
+ <div class="field">
+  <%= f.file_field :attachment %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

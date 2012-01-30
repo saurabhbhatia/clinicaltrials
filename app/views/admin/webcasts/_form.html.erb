@@ -1,4 +1,5 @@
-<%= sementic_form_for [:admin, @webcast] do |f| %>
+<%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
+<%= semantic_form_for [:admin, @webcast] do |f| %>
   <% if @webcast.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@webcast.errors.count, "error") %> prohibited this webcast from being saved:</h2>
@@ -21,8 +22,9 @@
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= cktext_area_tag("webcast[:description]", @webcast.description)%>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

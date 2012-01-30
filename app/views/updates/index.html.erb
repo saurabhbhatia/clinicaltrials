@@ -1,32 +1,16 @@
-<div id="banner" class="prepend-top"><img src="/images/header_sunflowers.jpg" alt="Awaken to health and happiness" /></div>
-<div id="content" class="content prepend-top">
-<h1>Listing updates</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Overview</th>
-    <th>Description</th>
-    <th>References</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<div id="banner" class="prepend-top"><img src="/mainapp/public/images/header_sunflowers.jpg" alt="Awaken to health and happiness" /></div>
+<h1>CV News</h1>
 <% @updates.each do |update| %>
-  <tr>
-    <td><%= update.title %></td>
-    <td><%= update.overview %></td>
-    <td><%= update.description %></td>
+	<div id="content" class="content prepend-top">
+    <h2><%= update.title %></h2>
+    <p><%= update.overview %></p>
+    <!--
+    <td><%= truncate(update.description, :length => 200, :separator => 'More') %></td>
     <td><%= update.references %></td>
-    <td><%= link_to 'Show', update %></td>
-  </tr>
+    -->
+    <p><%= link_to 'More...', update %></p>
+    </div>
 <% end %>
-</table>
-
-<br />
-
-</div>
-
+<%= paginate @updates %>
 
 

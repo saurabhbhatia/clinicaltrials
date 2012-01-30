@@ -1,7 +1,7 @@
+<%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
   <%= semantic_form_for [:admin, @banner] do |f| %>
     <%= f.inputs :title%>
-
-<%= f.inputs :description, :as => :ckeditor, :toolbar=>'Full' %>
+    <%= cktext_area_tag("banner[:description]", @banner.description)%>
   <%= f.file_field :banner %>
     <%= f.buttons :commit %>
   <% end %>

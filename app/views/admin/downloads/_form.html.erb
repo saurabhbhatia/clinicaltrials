@@ -1,4 +1,5 @@
-<%= form_for(@download) do |f| %>
+<%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
+<%= semantic_form_for(@download) do |f| %>
   <% if @download.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@download.errors.count, "error") %> prohibited this download from being saved:</h2>
@@ -17,7 +18,8 @@
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= cktext_area_tag("download[:description]", @download.description)%>
+
   </div>
   <div class="field">
     <%= f.label :download_type %><br />

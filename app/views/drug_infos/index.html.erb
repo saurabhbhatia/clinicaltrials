@@ -20,7 +20,26 @@ ul.pagination li:before {
 
 </style>
 
-<div id="banner" class="prepend-top"><img src="/images/header_sunflowers.jpg" alt="Awaken to health and happiness" /></div>
+<div id="banner" class="prepend-top"><img src="/mainapp/public/images/header_sunflowers.jpg" alt="Awaken to health and happiness" /></div>
+
+<% form_tag drug_infos_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+<div id=content>
+<% if @drug_search %>
+ <% for info in @drug_search %>
+  <h2>
+    <%= link_to h(info.title), info %>
+  </h2>
+  <div><%= simple_format(info.action) %></div>
+<% end %>
+<% end %>
+</div>
+
 <div id="content" class="content prepend-top">
 	<h1>Drug Info</h1>
 <%= alphabetically_paginate(@drug_infos) %>

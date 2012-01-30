@@ -1,0 +1,21 @@
+<%= form_for(@useful_link) do |f| %>
+  <% if @useful_link.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@useful_link.errors.count, "error") %> prohibited this useful_link from being saved:</h2>
+
+      <ul>
+      <% @useful_link.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :links %><br />
+    <%= f.cktext_area :links, :toolbar=>'Full', :width=>'800px', :height=>'200px' %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

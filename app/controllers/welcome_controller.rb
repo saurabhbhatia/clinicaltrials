@@ -10,5 +10,7 @@ class WelcomeController < ApplicationController
 
   def membership_benefits
   end
- 
+  
+  def disclaimer
+  end
 end

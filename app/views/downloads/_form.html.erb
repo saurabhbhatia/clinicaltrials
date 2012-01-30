@@ -1,4 +1,4 @@
-<%= form_for(@download) do |f| %>
+<%= form_for(@download, :html => { :multipart => true }) do |f| %>
   <% if @download.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@download.errors.count, "error") %> prohibited this download from being saved:</h2>

@@ -1,5 +1,7 @@
 class WebcastsController < ApplicationController
-before_filter :authenticate_user!
+before_filter :authenticate_admin_user!
+
+#before_filter :authenticate_user!
   # GET /webcasts
   # GET /webcasts.xml
   def index

@@ -1,17 +1,31 @@
-<h2>Sign in</h2>
-
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <p><%= f.label :email %><br />
-  <%= f.email_field :email %></p>
-
-  <p><%= f.label :password %><br />
-  <%= f.password_field :password %></p>
-
-  <% if devise_mapping.rememberable? -%>
-    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
-  <% end -%>
-
-  <p><%= f.submit "Sign in" %></p>
-<% end %>
-
-<%= render :partial => "devise/shared/links" %>
+<div id="banner" class="prepend-top"><img src="/mainapp/public/images/header_sunflowers.jpg" alt="Awaken to health and happiness" /></div>
+<div class="span-24 last prepend-top">
+	<div class="span-12">
+		<div id="content" class="content">
+			<h1>Login</h1>
+			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+			  <p><%= f.label :email %><br />
+			  <%= f.email_field :email %></p>
+			
+			  <p><%= f.label :password %><br />
+			  <%= f.password_field :password %></p>
+			
+			  <% if devise_mapping.rememberable? -%>
+			    <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
+			  <% end -%>
+			
+			  <p><%= f.submit "Login" %></p>
+			<% end %>
+			
+			<%= render :partial => "devise/shared/links" %>
+		</div>		
+	</div>
+	<div class="span-12 last">
+		<div id="content" class="content note note-color note-green" style="min-height: 310px;">
+			<h1>Not registered?</h1>
+			<p>Text to convince the user to register. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			<p>Text to convince the user to register. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+			<p><a href="/mainapp/public/users/sign_up" class="button">Register</a></p>
+		</div>		
+	</div>
+</div>

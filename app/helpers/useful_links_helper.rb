@@ -1,0 +1,2 @@
+module UsefulLinksHelper
+end

@@ -22,6 +22,11 @@
 <div class="field">
   <%= f.file_field :attachment %>
   </div>
+  <div class="field">
+    <%= f.label :references %><br />
+    <%= f.cktext_area :references, :toolbar=>'Full', :width=>'800px', :height=>'200px' %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>

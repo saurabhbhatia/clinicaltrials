@@ -1,6 +1,12 @@
-  <%= semantic_form_for [:admin, @trial] do |f| %>
-    <%= f.inputs :title, :description%>
+ <%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
+ <%= semantic_form_for [:admin, @trial], :multipart => true do |f| %>
+  <%= f.text_field :title %>
+
+     <%= cktext_area_tag("trial[description]", @trial.description) %>
 
   <%= f.file_field :attachment %>
+
+     <%= cktext_area_tag("trial[references]", @trial.references) %>
+
     <%= f.buttons :commit %>
   <% end %>

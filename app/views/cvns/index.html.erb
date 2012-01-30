@@ -1,0 +1,28 @@
+<h1>Listing cvns</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Overview</th>
+    <th>Description</th>
+    <th>References</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cvns.each do |cvn| %>
+  <tr>
+    <td><%= cvn.title %></td>
+    <td><%= cvn.overview %></td>
+    <td><%= cvn.description %></td>
+    <td><%= cvn.references %></td>
+    <td><%= link_to 'Show', cvn %></td>
+    <td><%= link_to 'Edit', edit_cvn_path(cvn) %></td>
+    <td><%= link_to 'Destroy', cvn, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

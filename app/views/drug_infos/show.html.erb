@@ -1,4 +1,4 @@
-<div id="banner" class="prepend-top"><img src="/images/header_sunflowers.jpg" alt="Awaken to health and happiness" /></div>
+<div id="banner" class="prepend-top"><img src="/mainapp/public/images/header_sunflowers.jpg" alt="Awaken to health and happiness" /></div>
 <div id="content" class="content prepend-top">
 	<h1>Drug Info</h1>
 <p id="notice"><%= notice %></p>
@@ -22,10 +22,26 @@
   <b>Interaction:</b>
   <%= @drug_info.interaction %>
 </p>
+<p>
+<%= link_to @drug_info.attachment_drug_file_name, @drug_info.attachment_drug.url  %>
+</p>
+
 
 
 <%= link_to 'Edit', edit_drug_info_path(@drug_info) %> |
 <%= link_to 'Back', drug_infos_path %>
+
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style ">
+<a class="addthis_button_preferred_1"></a>
+<a class="addthis_button_preferred_2"></a>
+<a class="addthis_button_preferred_3"></a>
+<a class="addthis_button_preferred_4"></a>
+<a class="addthis_button_compact"></a>
+<a class="addthis_counter addthis_bubble_style"></a>
+</div>
+<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=xa-4f06c4e74af81e70"></script>
+<!-- AddThis Button END -->
 </div>
 
 

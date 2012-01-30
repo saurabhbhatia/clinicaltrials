@@ -3,7 +3,8 @@
 <table>
   <tr>
     <th>Topic</th>
-    <th>Date</th>
+    <th>From Date</th>
+    <th>To Date</th>   
     <th>Organization</th>
     <th>More info</th>
     <th>Location</th>
@@ -13,17 +14,21 @@
   </tr>
 
 <% @events.each do |event| %>
+<% if ( event.todate - Date.today() ).to_i >= 0 %>
   <tr>
     <td><%= event.topic %></td>
-    <td><%= event.date %></td>
+    <td><% e = event.date %><%= e.strftime("%d %B %Y") %></td>
+    <td><% t = event.todate %><%= t.strftime("%d %B %Y") %></td>
     <td><%= event.organization %></td>
-    <td><%= event.more_info %></td>
+    <td><%= truncate(event.more_info, :length => 200, :omission => '... (continued)') %></td>
     <td><%= event.location %></td>
     <td><%= link_to 'Show', event %></td>
   </tr>
 <% end %>
+<% end %>
+
 </table>
 
 <br />
-
-<%= link_to 'New Event', new_event_path %>
+<%= paginate @events %>
+<!-- <%= link_to 'New Event', new_event_path %> -->

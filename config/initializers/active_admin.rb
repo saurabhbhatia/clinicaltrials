@@ -5,7 +5,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Glenmark"
+  config.site_title = "iRAAS"
 
 
   # == Default Namespace
@@ -34,7 +34,6 @@ ActiveAdmin.setup do |config|
   # within the controller.
   config.authentication_method = :authenticate_admin_user!
 
-
   # == Current User
   #
   # Active Admin will associate actions with the current
@@ -61,7 +60,7 @@ ActiveAdmin.setup do |config|
   # You can add before, after and around filters to all of your
   # Active Admin resources from here. 
   #
-  # config.before_filter :do_something_awesome
+   config.before_filter :edit
 
 
   # == Register Stylesheets & Javascripts

@@ -1,25 +1,12 @@
-<div id="banner" class="prepend-top"><img src="/images/header_sunflowers.jpg" alt="Awaken to health and happiness" /></div>
-<div id="content" class="content prepend-top">
-	<h1>Listing trials</h1>
-	<table>
-	  <tr>
-	    <th>Title</th>
-	    <th>Description</th>
-	    <th></th>
-	    <th></th>
-	    <th></th>
-	  </tr>
+<div id="banner" class="prepend-top"><img src="/mainapp/public/images/header_sunflowers.jpg" alt="Awaken to health and happiness" /></div>
+<h1>Trials</h1>
+<% @trials.each do |trial| %>
+	<div id="content" class="content prepend-top">
+	    <h2><%= trial.title %></h2>
+	    <p><%= truncate(trial.description, :length => 200, :separator => 'More' ).html_safe %><%= link_to 'Read More', trial %></p>
+     </div>
+<% end %>
+<%= paginate @trials %>
 	
-	<% @trials.each do |trial| %>
-	  <tr>
-	    <td><%= trial.title %></td>
-	    <td><%= trial.description.html_safe %></td>
-	    <td><%= link_to 'Show', trial %></td>
-	  </tr>
-	<% end %>
-	</table>
-	
-	<br />
-	
-	<%= link_to 'New Trial', new_trial_path %>
-</div>
+<!-- <%= link_to 'New Trial', new_trial_path %> -->
+

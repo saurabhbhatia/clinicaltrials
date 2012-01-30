@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @cvn.title %>
+</p>
+
+<p>
+  <b>Overview:</b>
+  <%= @cvn.overview %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @cvn.description %>
+</p>
+
+<p>
+  <b>References:</b>
+  <%= @cvn.references %>
+</p>
+
+<p>
+<%= link_to @cvn.attachment_file_name, @cvn.attachment.url  %>
+</p>
+
+<%= paginate @cvn %>
+
+<%= link_to 'Edit', edit_cvn_path(@cvn) %> |
+<%= link_to 'Back', cvns_path %>

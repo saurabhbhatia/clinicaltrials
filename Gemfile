@@ -19,7 +19,8 @@ gem "friendly_id", "~> 4.0.0.beta8"
 gem "geocoder"
 gem 'paginate_alphabetically'
 gem 'contact_us', '~> 0.1.4'
-
+gem 'meta_where'
+gem 'meta_search'
 # Use unicorn as the web server
 # gem 'unicorn'
 # Deploy with Capistrano
@@ -29,6 +30,7 @@ gem 'mime-types', :require => 'mime/types'
 group :production do
   gem 'pg'
 end
+gem 'thinking-sphinx', '2.0.10'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'

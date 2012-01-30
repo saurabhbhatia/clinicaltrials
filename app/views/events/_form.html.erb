@@ -16,9 +16,15 @@
     <%= f.text_field :topic %>
   </div>
   <div class="field">
-    <%= f.label :date %><br />
+    <%= f.label :from_date %><br />
     <%= f.date_select :date %>
   </div>
+  <div class="field">
+    <%= f.label :to_date %><br />
+    <%= f.date_select :todate %>
+  </div>
+
+
   <div class="field">
     <%= f.label :organization %><br />
     <%= f.text_field :organization %>

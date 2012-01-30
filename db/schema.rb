@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111226075748) do
+ActiveRecord::Schema.define(:version => 20120114164324) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -83,6 +83,18 @@ ActiveRecord::Schema.define(:version => 20111226075748) do
     t.datetime "updated_at"
   end
 
+  create_table "cvns", :force => true do |t|
+    t.string   "title"
+    t.text     "overview"
+    t.text     "description"
+    t.text     "references"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "downloads", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -116,6 +128,7 @@ ActiveRecord::Schema.define(:version => 20111226075748) do
     t.datetime "updated_at"
     t.float    "latitude"
     t.float    "longitude"
+    t.date     "todate"
   end
 
   create_table "glenmark_news", :force => true do |t|
@@ -153,6 +166,7 @@ ActiveRecord::Schema.define(:version => 20111226075748) do
     t.string   "attachment_file_name"
     t.string   "attachment_content_type"
     t.integer  "attachment_file_size"
+    t.text     "references"
   end
 
   create_table "updates", :force => true do |t|
@@ -160,6 +174,15 @@ ActiveRecord::Schema.define(:version => 20111226075748) do
     t.text     "overview"
     t.text     "description"
     t.text     "references"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+  end
+
+  create_table "useful_links", :force => true do |t|
+    t.text     "links"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -189,6 +212,7 @@ ActiveRecord::Schema.define(:version => 20111226075748) do
     t.string   "specify_institute",                     :default => "N/A"
     t.string   "specify_specialization",                :default => "N/A"
     t.string   "specify_degree",                        :default => "N/A"
+    t.boolean  "approved"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

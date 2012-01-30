@@ -6,8 +6,13 @@
 </p>
 
 <p>
-  <b>Date:</b>
-  <%= @event.date %>
+  <b>From Date:</b>
+  <% e = @event.date %><%=  e.strftime("%d %B %Y") %> 
+</p>
+
+<p>
+  <b>To Date:</b>
+  <% t = @event.todate %><%=  t.strftime("%d %B %Y") %>
 </p>
 
 <p>
@@ -19,6 +24,11 @@
   <b>More info:</b>
   <%= @event.more_info %>
 </p>
+<p>
+  <b>Address:</b>
+<%= @event.location %>
+</p>
+
 
 <p>
   <b>Location:</b>
@@ -26,5 +36,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
+<!-- <%= link_to 'Edit', edit_event_path(@event) %> --> 
 <%= link_to 'Back', events_path %>

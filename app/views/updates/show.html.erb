@@ -1,31 +1,31 @@
-<div id="banner" class="prepend-top"><img src="/images/header_sunflowers.jpg" alt="Awaken to health and happiness" /></div>
+<div id="banner" class="prepend-top"><img src="/mainapp/public/images/header_sunflowers.jpg" alt="Awaken to health and happiness" /></div>
 <div id="content" class="content prepend-top">
-	<h1>Trial Update</h1>
-<p id="notice"><%= notice %></p>
+	<h1>CV News</h1>
+	<p id="notice"><%= notice %></p>
+	<h2><%= @update.title %></h2>
 
+	<p>
+	  <b>Overview:</b>
+	  <%= @update.overview %>
+	</p>
+
+	<p>
+	  <b>Description:</b>
+	  <%= @update.description %>
+	</p>
+	
+	<p>
+	  <b>References:</b>
+	  <%= @update.references %>
+	</p>
+	
 <p>
-  <b>Title:</b>
-  <%= @update.title %>
+<%= link_to @update.attachment_file_name, @update.attachment.url  %>
 </p>
 
-<p>
-  <b>Overview:</b>
-  <%= @update.overview %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @update.description %>
-</p>
-
-<p>
-  <b>References:</b>
-  <%= @update.references %>
-</p>
-
-
-<%= link_to 'Edit', edit_update_path(@update) %> |
-<%= link_to 'Back', updates_path %>
+	
+	<!-- <%= link_to 'Edit', edit_update_path(@update) %> | -->
+	<%= link_to 'Back', updates_path %>
 </div>
 
 
