@@ -1,35 +1,11 @@
-<%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
-<%= semantic_form_for(@download) do |f| %>
-  <% if @download.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@download.errors.count, "error") %> prohibited this download from being saved:</h2>
+  <%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
+  <%= semantic_form_for [:admin, @download], :multipart => true do |f| %>
+    <%= f.inputs :title %>
+    <%= f.input :description, :input_html => { :class => "ckeditor" } %>
+ <%= f.label :download_type %><br />
+ <%= select :download, :download_type, ['iRAAS Journal', 'Telma 24 X 7', 'Slide Kits', 'Patient Education Material'] %><br />
 
-      <ul>
-      <% @download.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+
+  <%= f.input :attachment, :as => :file %>
+    <%= f.buttons :commit %>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= cktext_area_tag("download[:description]", @download.description)%>
-
-  </div>
-  <div class="field">
-    <%= f.label :download_type %><br />
- <%= select :download, :download_type, ['iRAAS Journal', 'Telma 24 X 7', 'Slide Kits', 'Patient Education Material'] %>
-
-  </div>
-  <div class="field">
-  <%= f.file_field :attachment %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>

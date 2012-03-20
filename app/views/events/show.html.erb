@@ -1,40 +1,21 @@
+<div id="banner" class="prepend-top"><img src="/mainapp/public/images/header_drug_info.jpg" alt="Awaken to health and happiness" /></div>
+<div id="content" class="content prepend-top">
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Topic:</b>
-  <%= @event.topic %>
-</p>
-
-<p>
-  <b>From Date:</b>
-  <% e = @event.date %><%=  e.strftime("%d %B %Y") %> 
-</p>
-
-<p>
-  <b>To Date:</b>
-  <% t = @event.todate %><%=  t.strftime("%d %B %Y") %>
-</p>
-
+<h1><%= @event.topic %></h1>
+<p><strong>Date:</strong> <% e = @event.date %><%=  e.strftime("%d %B %Y") %> - <% t = @event.todate %><%=  t.strftime("%d %B %Y") %> </p>
+<!--
 <p>
   <b>Organization:</b>
   <%= @event.organization %>
 </p>
-
 <p>
   <b>More info:</b>
-  <%= @event.more_info %>
+  <%= @event.more_info.html_safe %>
 </p>
-<p>
-  <b>Address:</b>
-<%= @event.location %>
-</p>
-
-
-<p>
-  <b>Location:</b>
-<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=14&markers=#{@event.latitude}%2C#{@event.longitude}" %>
-</p>
-
+-->
+<p><strong>Location:</strong> <%= @event.location %></p>
+<p><%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=14&markers=#{@event.latitude}%2C#{@event.longitude}" %></p>
 
 <!-- <%= link_to 'Edit', edit_event_path(@event) %> --> 
 <%= link_to 'Back', events_path %>
+</div>

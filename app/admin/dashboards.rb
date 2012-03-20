@@ -7,20 +7,37 @@ ActiveAdmin::Dashboards.build do
   # == Simple Dashboard Section
   # Here is an example of a simple dashboard section
   #
-  #   section "Recent Posts" do
-  #     ul do
-  #       Post.recent(5).collect do |post|
-  #         li link_to(post.title, admin_post_path(post))
-  #       end
-  #     end
-  #   end
-  
+  section "Recent Banners" do  
+    table_for Banner.order("created_at desc").limit(5) do  
+      column :title
+    end  
+    strong { link_to "View All Banners", admin_banners_path }  
+  end   
+
+  section "Recently Created Downloads" do
+    table_for Download.order("created_at desc").limit(5) do
+      column :title
+      column :attachment_file_name
+      column :download_type
+    end
+    strong { link_to "View All Downloads", admin_downloads_path }
+  end
+
+  section "Recent Drug Infos" do
+    table_for DrugInfo.order("created_at desc").limit(5) do
+      column :title
+    end
+    strong { link_to "View All Drug Info", admin_drug_infos_path }
+  end
+
   # == Render Partial Section
-  # The block is rendererd within the context of the view, so you can
+  # The block is rendered within the context of the view, so you can
   # easily render a partial rather than build content in ruby.
   #
   #   section "Recent Posts" do
-  #     render 'recent_posts' # => this will render /app/views/admin/dashboard/_recent_posts.html.erb
+  #     div do
+  #       render 'recent_posts' # => this will render /app/views/admin/dashboard/_recent_posts.html.erb
+  #     end
   #   end
   
   # == Section Ordering

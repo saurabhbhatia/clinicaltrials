@@ -14,14 +14,11 @@
   <tr>
     <td><%= webcast.title %></td>
     <td><% videotron = UnvlogIt.new(webcast.link) %><%= videotron.embed_html(133, 118).html_safe %></td>
-    <td><%= webcast.description %></td>
-    <td><%= link_to 'Show', webcast %></td>
-    <td><%= link_to 'Edit', edit_webcast_path(webcast) %></td>
-    <td><%= link_to 'Destroy', webcast, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= webcast.description.html_safe %></td>
+    <td><%= link_to 'Detail', webcast %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Webcast', new_webcast_path %>

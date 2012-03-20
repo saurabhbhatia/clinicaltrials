@@ -1,0 +1,56 @@
+<style>
+ul.pagination {
+  list-style: none;
+  color: lightgray;
+  padding: 1em 0.5em;
+}
+
+ul.pagination strong {
+  color: black;
+}
+
+ul.pagination li {
+  display: inline;
+  font-size: 1.1em;
+}
+
+ul.pagination li:before {
+  content: '| ';
+}
+
+</style>
+
+<div id="banner" class="prepend-top"><img src="/mainapp/public/images/header_drug_info.jpg" alt="Awaken to health and happiness" /></div>
+
+<% form_tag drug_info_search_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+
+
+	<div id="content" class="content prepend-top">
+		<h1>Drug Info | Search Results</h1>
+<table>
+                  <tr>
+                    <th width="50%">Title</th>
+                    <th width="40%">Action</th>
+                    <th width="10%"></th>
+                  </tr>
+
+                <% @drug_search.each do |drug_info| %>
+                  <tr>
+                    <td width="50%"><%= drug_info.title %></td>
+                    <td width="40%"><%= drug_info.action.html_safe %></td>
+                    <td width="10%"><%= link_to 'Show', drug_info %></td>
+                  </tr>
+                <% end %>
+                </table>
+        </div>
+<%= paginate @drug_search %>
+
+
+
+

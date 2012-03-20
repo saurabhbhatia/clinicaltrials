@@ -7,7 +7,7 @@ ActiveAdmin.setup do |config|
   #
   config.site_title = "iRAAS"
 
-
+config.register_javascript 'ckeditor/ckeditor.js'
   # == Default Namespace
   #
   # Set the default namespace each administration resource
@@ -60,7 +60,7 @@ ActiveAdmin.setup do |config|
   # You can add before, after and around filters to all of your
   # Active Admin resources from here. 
   #
-   config.before_filter :edit
+  # config.before_filter :edit
 
 
   # == Register Stylesheets & Javascripts
@@ -74,4 +74,12 @@ ActiveAdmin.setup do |config|
   #
   # To load a javascript file:
   #   config.register_javascript 'my_javascript.js'
+end
+
+ActiveAdmin::ResourceController.class_eval do
+  protected
+
+  def current_ability
+    @current_ability ||= AdminAbility.new(current_user)
+  end
 end

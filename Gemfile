@@ -6,11 +6,11 @@ gem 'rmagick'
 gem 'kaminari'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-  gem 'activeadmin'
+  gem 'activeadmin' , '0.3.1'
 #gem 'sqlite3'
 gem 'mysql'
 gem "acts_as_unvlogable"
-gem 'devise'
+gem 'devise', '1.5.2'
 gem 'recaptcha', :require => 'recaptcha/rails'
 gem 'mime-types', :require => 'mime/types'
 gem 'ckeditor'
@@ -21,16 +21,21 @@ gem 'paginate_alphabetically'
 gem 'contact_us', '~> 0.1.4'
 gem 'meta_where'
 gem 'meta_search'
+gem 'whenever'
+gem "mail"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 # Deploy with Capistrano
 # gem 'capistrano'
 gem "paperclip"
 gem 'mime-types', :require => 'mime/types'
+gem 'jquery-rails'
 group :production do
   gem 'pg'
 end
 gem 'thinking-sphinx', '2.0.10'
+gem "cancan"
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'

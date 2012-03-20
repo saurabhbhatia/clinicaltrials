@@ -1,12 +1,8 @@
-<%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
-  <%= semantic_form_for [:admin, @banner] do |f| %>
-    <%= f.inputs :title%>
-    <%= cktext_area_tag("banner[:description]", @banner.description)%>
+  <%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
+  <%= semantic_form_for [:admin, @banner], :multipart => true do |f| %>
+    <%= f.inputs :title %>
+    <%= f.input :description, :input_html => { :class => "ckeditor" } %>
+
   <%= f.file_field :banner %>
     <%= f.buttons :commit %>
   <% end %>
-
-
-
-
-

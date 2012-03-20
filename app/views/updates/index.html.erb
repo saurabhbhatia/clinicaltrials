@@ -1,11 +1,10 @@
-<div id="banner" class="prepend-top"><img src="/mainapp/public/images/header_sunflowers.jpg" alt="Awaken to health and happiness" /></div>
-<h1>CV News</h1>
+<div id="banner" class="prepend-top"><img src="/mainapp/public/images/header_cv_news.jpg" alt="Awaken to health and happiness" /></div>
 <% @updates.each do |update| %>
 	<div id="content" class="content prepend-top">
     <h2><%= update.title %></h2>
-    <p><%= update.overview %></p>
+    <p><%= update.overview.html_safe %></p>
     <!--
-    <td><%= truncate(update.description, :length => 200, :separator => 'More') %></td>
+    <td><%= truncate(update.description.html_safe, :length => 200, :separator => 'More') %></td>
     <td><%= update.references %></td>
     -->
     <p><%= link_to 'More...', update %></p>

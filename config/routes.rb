@@ -1,5 +1,7 @@
 Glenmark::Application.routes.draw do
 
+
+
   resources :cvns
 
   resources :useful_links
@@ -11,6 +13,7 @@ Glenmark::Application.routes.draw do
   get 'terms_of_use' => "welcome#terms_of_use", :as => :terms_of_use
   get 'membership_benefits' => "welcome#membership_benefits", :as => :membership_benefits
   get 'disclaimer' => "welcome#disclaimer", :as => :disclaimer
+  get 'drug_info_search' => "drug_infos#search", :as => :drug_info_search
 
 
   resources :events

@@ -1,0 +1,13 @@
+<%= javascript_include_tag "/javascripts/ckeditor/ckeditor.js" %>
+  <%= semantic_form_for [:admin, @event] do |f| %>
+<%= f.inputs :topic %>
+       <%= f.input :date, :start_year => 2012, :end_year => 2030, :label => "Start Date" %>  
+       <%= f.input :todate, :start_year => 2012, :end_year => 2030, :label => "End Date" %>
+
+    <%= f.input :organization, :input_html => { :class => "ckeditor" } %>
+   <%= f.input :location, :input_html => { :class => "ckeditor" } %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

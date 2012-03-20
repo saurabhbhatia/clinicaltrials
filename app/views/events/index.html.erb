@@ -1,34 +1,19 @@
-<h1>Listing events</h1>
-
-<table>
-  <tr>
-    <th>Topic</th>
-    <th>From Date</th>
-    <th>To Date</th>   
-    <th>Organization</th>
-    <th>More info</th>
-    <th>Location</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<div id="banner" class="prepend-top"><img src="/mainapp/public/images/banner_event.jpg" alt="Awaken to health and happiness" /></div>
 <% @events.each do |event| %>
-<% if ( event.todate - Date.today() ).to_i >= 0 %>
-  <tr>
-    <td><%= event.topic %></td>
-    <td><% e = event.date %><%= e.strftime("%d %B %Y") %></td>
-    <td><% t = event.todate %><%= t.strftime("%d %B %Y") %></td>
-    <td><%= event.organization %></td>
-    <td><%= truncate(event.more_info, :length => 200, :omission => '... (continued)') %></td>
-    <td><%= event.location %></td>
-    <td><%= link_to 'Show', event %></td>
-  </tr>
+	<div class="span-24 last prepend-top" style="background:#fff;border-radius:4px 4px 4px 4px;">
+		<div style="padding:15px;">
+	    <h2><%= event.topic %></h2>
+	    <strong>Date:</strong> <% e = event.date %><%= e.strftime("%d %B %Y") %> - <% t = event.todate %><%= t.strftime("%d %B %Y") %><br/>
+	    <!-- 
+	    <%= event.organization %><br/>
+	    <%= truncate(event.more_info.html_safe, :length => 200, :omission => '... (continued)') %><br/>
+	    -->
+	    <strong>Location:</strong> <%= event.location %><br/>
+           <!-- <p><%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=14&markers=#{event.latitude}%2C#{event.longitude}" %></p> -->
+	    <p><%= link_to 'Show', event, :target => "_blank" %></p>
+	    </div>
+    </div>
 <% end %>
-<% end %>
-
-</table>
-
-<br />
-<%= paginate @events %>
+<p>&nbsp;</p>
+<p><%= paginate @events %></p>
 <!-- <%= link_to 'New Event', new_event_path %> -->

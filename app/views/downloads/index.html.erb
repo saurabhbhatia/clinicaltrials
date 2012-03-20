@@ -1,33 +1,103 @@
-<h1>Listing downloads</h1>
+<h1>Downloads</h1>
+
+<h2>iRaas Journal</h2>
 
 <table>
   <tr>
     <th>Title</th>
     <th>Description</th>
-    <th>Type</th>
-    <th>Attachment file name</th>
-    <th>Attachment content type</th>
-    <th>Attachment file size</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
-<% @downloads.each do |download| %>
+<% @iraas_journal.each do |download| %>
   <tr>
-    <td><%= download.title %></td>
-    <td><%= download.description %></td>
-    <td><%= download.download_type %></td>
-    <td><%= download.attachment_file_name %></td>
-    <td><%= download.attachment_content_type %></td>
-    <td><%= download.attachment_file_size %></td>
+<td><%= link_to download.title, download.attachment.url  %></td>
+    <td><%= download.description.html_safe %></td>
     <td><%= link_to 'Show', download %></td>
-    <td><%= link_to 'Edit', edit_download_path(download) %></td>
-    <td><%= link_to 'Destroy', download, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
+<%= paginate @iraas_journal %>
+<br />
+<h2>Guidelines</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+
+<% @guideline.each do |download| %>
+  <tr>
+<td><%= link_to download.title, download.attachment.url  %></td>
+    <td><%= download.description.html_safe %></td>
+    <td><%= link_to 'Show', download %></td>
+  </tr>
+<% end %>
+</table>
+<%= paginate @guideline %>
+<br />
+
+
+<h2>Telma 24 X 7</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+
+<% @telma.each do |download| %>
+  <tr>
+<td><%= link_to download.title, download.attachment.url  %></td>
+    <td><%= download.description %></td>
+    <td><%= link_to 'Show', download %></td>
+  </tr>
+<% end %>
+</table>
+<%= paginate @telma %>
+<br />
+
+<h2>Slide Kits</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+
+<% @slide_kits.each do |download| %>
+  <tr>
+<td><%= link_to download.title, download.attachment.url  %></td>
+    <td><%= download.description %></td>
+    <td><%= link_to 'Show', download %></td>
+  </tr>
+<% end %>
+</table>
+<%= paginate @slide_kits %>
+<br />
+
+<h2>Patient Education Material</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+
+<% @pem.each do |download| %>
+  <tr>
+<td><%= link_to download.title, download.attachment.url  %></td>
+    <td><%= download.description %></td>
+    <td><%= link_to 'Show', download %></td>
+  </tr>
+<% end %>
+</table>
+<%= paginate @pem %>
 
 <br />
 
-<%= link_to 'New Download', new_download_path %>

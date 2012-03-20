@@ -1,17 +1,16 @@
 ActiveAdmin.register Webcast do
+  controller.authorize_resource
 
   controller #=> returns the controller class
 
-  # So you could do
-#  controller.load_and_authorize_resource
-
-  # You can also pass a block to the controller method to 
-  # evaluate some code within it
- # controller do
-  #  load_and_authorize_resource
- # end
-
-    form :partial => "form"
+form :html => { :multipart => true } do |f|
+f.inputs "Webcast" do
+ f.input :title
+ f.input :link
+ f.input :description, :input_html => { :class => "ckeditor" }
+end
+ f.buttons
+end
   index do
    column :title
    column :link

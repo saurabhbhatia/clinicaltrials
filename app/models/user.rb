@@ -2,13 +2,13 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   # Setup accessible (or protected) attributes for your model
 
   attr_accessible :email, :password, :password_confirmation, :address,
                   :remember_me, :name, :phone, :specialization, :last_name, 
-                  :city, :pincode, :state, :degree, :specify_degree, :specify_institute, :specify_specialization
+                  :city, :pincode, :state, :degree, :specify_degree, :specify_institute, :specify_specialization, :approved
 
   validates :email, :presence => true, :uniqueness => true, :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/ }
   validates :name, :presence => true
@@ -23,4 +23,17 @@ class User < ActiveRecord::Base
   validates :specify_institute, :presence => true
   validates :specify_specialization, :presence => true
   validates :specify_degree, :presence => true
+  scope :approval_pending, where(:approved => false)  
+
+def active_for_authentication? 
+  super && approved? 
+end 
+
+def inactive_message 
+  if !approved? 
+    :not_approved 
+  else 
+    super # Use whatever other message 
+  end 
+end
 end

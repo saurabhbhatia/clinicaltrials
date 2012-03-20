@@ -1,29 +1,25 @@
-<div id="banner" class="prepend-top"><img src="/mainapp/public/images/header_sunflowers.jpg" alt="Awaken to health and happiness" /></div>
+<div id="banner" class="prepend-top"><img src="/mainapp/public/images/header_cv_news.jpg" alt="Awaken to health and happiness" /></div>
 <div id="content" class="content prepend-top">
-	<h1>CV News</h1>
 	<p id="notice"><%= notice %></p>
 	<h2><%= @update.title %></h2>
 
 	<p>
 	  <b>Overview:</b>
-	  <%= @update.overview %>
+	  <%= @update.overview.html_safe %>
 	</p>
 
 	<p>
 	  <b>Description:</b>
-	  <%= @update.description %>
+	  <%= @update.description.html_safe %>
 	</p>
 	
 	<p>
 	  <b>References:</b>
-	  <%= @update.references %>
+	  <%= @update.references.html_safe %>
 	</p>
-	
 <p>
 <%= link_to @update.attachment_file_name, @update.attachment.url  %>
 </p>
-
-	
 	<!-- <%= link_to 'Edit', edit_update_path(@update) %> | -->
 	<%= link_to 'Back', updates_path %>
 </div>
