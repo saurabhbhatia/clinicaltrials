@@ -21,11 +21,32 @@ end
 #custom index
 index do
   column :title
-  column :action
-  column :indications
-  column :interaction
+#  column :action
+column "Action" do |d|
+      (d.action).html_safe
+end
+column "Indications" do |d|
+      (d.indications).html_safe           
+end
+column "Interactions" do |d|
+      (d.interaction).html_safe           
+end
+
+  #column :indications
+  #column :interaction
   column :attachment_drug_file_name
   default_actions
+end
+ show do |u|
+    attributes_table do
+        row :title
+        row "Action" do (u.action).html_safe end
+        row "Indications" do (u.indications).html_safe end
+        row "Interactions" do (u.interaction).html_safe end
+        row :attachment_drug_file_name
+
+      end
+      active_admin_comments
 end
 
 end

@@ -14,7 +14,20 @@ end
   index do
    column :title
    column :link
-   column :description
+   #column :description
+column "Description" do |w|
+      (w.description).html_safe
+end
    default_actions
   end
+
+ show do |w|
+    attributes_table do
+        row :title
+        row link do link_to w.link end
+        row "Description" do (w.description).html_safe end
+
+      end
+      active_admin_comments
+end
 end

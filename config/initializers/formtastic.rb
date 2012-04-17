@@ -1,0 +1,1 @@
+Formtastic::FormBuilder.escape_html_entities_in_hints_and_labels = false

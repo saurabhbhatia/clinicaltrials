@@ -13,11 +13,23 @@ end
 #cusotm index
 index do
   column :title
-  column :description
+#  column :description
+column "Description" do |d|
+      (d.description).html_safe
+end
+
   column :attachment_file_name
   column :download_type
   default_actions
 end
 
-  
+ show do |d|
+    attributes_table do
+        row :title
+        row "Description" do (d.description).html_safe end
+        row :attachment_file_name
+
+      end
+      active_admin_comments
+end  
 end

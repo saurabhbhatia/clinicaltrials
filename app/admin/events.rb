@@ -21,7 +21,11 @@ actions :all
     end
     column "From Date", :date
     column "To Date", :todate
-    column :more_info
+    #column :more_info
+column "More Info" do |e|
+      (e.more_info).html_safe
+end
+
     column :organization
     column :location
     default_actions
@@ -30,6 +34,17 @@ actions :all
     #end
   end
 
+ show do |e|
+    attributes_table do
+        row :topic
+        row "From Date" do e.date end
+        row "Description" do e.todate end
+        row "More Info" do (e.more_info).html_safe end
+        row :organization
+        row :location
 
+      end
+      active_admin_comments
+end
   
 end

@@ -22,7 +22,7 @@ config.register_javascript 'ckeditor/ckeditor.js'
   # To set no namespace by default, use:
   #   config.default_namespace = false
   config.default_namespace = :admin
-
+#Formtastic::FormBuilder.escape_html_entities_in_hints_and_labels = false
 
   # == User Authentication
   #

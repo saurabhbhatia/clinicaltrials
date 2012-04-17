@@ -16,10 +16,28 @@ end
     column :title do |e|
      link_to e.title, admin_trial_path(e)
     end
-    column :description
+   # column :description
+column "Description" do |t|
+      (t.description).html_safe           
+end
+
     column :attachment_file_name
-    column :references
+#    column :references
+column "References" do |t|
+      (t.references).html_safe
+end
+
     default_actions
   end
-     
+
+ show do |u|
+    attributes_table do
+        row :title
+        row "Description" do (u.description).html_safe end
+        row "References" do (u.references).html_safe end
+        row :attachment_file_name
+
+      end
+      active_admin_comments
+end
 end

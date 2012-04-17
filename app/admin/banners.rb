@@ -19,7 +19,11 @@ end
 #cusotm index
 index do
   column :title
-  column :description
+#  column :description
+column "Description" do |b|
+      (b.description).html_safe
+end
+
   column :banner_file_name
   default_actions
 end

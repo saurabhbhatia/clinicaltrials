@@ -20,7 +20,7 @@ ul.pagination li:before {
 
 </style>
 
-<div id="banner" class="prepend-top"><img src="/mainapp/public/images/header_drug_info.jpg" alt="Awaken to health and happiness" /></div>
+<div id="banner" class="prepend-top"><img src="/images/header_drug_info.jpg" alt="Awaken to health and happiness" /></div>
 
 <% form_tag drug_info_search_path, :method => :get do %>
   <p>
@@ -31,25 +31,19 @@ ul.pagination li:before {
 
 
 
-	<div id="content" class="content prepend-top">
-		<h1>Drug Info</h1>
-		<%= alphabetically_paginate(@drug_infos) %>
-		<table>
-		  <tr>
-		    <th width="50%">Title</th>
-		    <th width="40%">Action</th>
-		    <th width="10%"></th>
-		  </tr>
-		
-		<% @drug_infos.each do |drug_info| %>
-		  <tr>
-		    <td width="50%"><%= drug_info.title %></td>
-		    <td width="40%"><%= drug_info.action.html_safe %></td>
-		    <td width="10%"><%= link_to 'Show', drug_info %></td>
-		  </tr>
-		<% end %>
-		</table>
-	</div>	
+<div id="content" class="content prepend-top">
+	<%= alphabetically_paginate(@drug_infos) %>
+</div>		
+<% @drug_infos.each do |drug_info| %>
+	<div class="span-24 last prepend-top" style="background:#fff;border-radius:4px 4px 4px 4px;">
+		<div style="padding:15px;">
+	    <h2><%= drug_info.title %></h2>
+	    <strong>Action:</strong> <%= drug_info.action.html_safe %><br/>
+	    <%= link_to 'Show', drug_info %>
+	    </div>
+    </div>	
+<% end %>
+
 
 
 

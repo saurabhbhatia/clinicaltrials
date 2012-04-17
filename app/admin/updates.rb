@@ -16,10 +16,33 @@ end
 
 index do
   column :title
-  column :overview
-  column :description
-  column :references
+#  column :overview
+column "Overview" do |u|
+      (u.overview).html_safe
+end
+
+#  column :description
+column "Description" do |u|
+      (u.description).html_safe
+end
+
+#  column :references
+column "References" do |u|
+      (u.references).html_safe
+end
+
   column :attachment_file_name
   default_actions
 end  
+show do |u|
+    attributes_table do
+        row :title
+        row "Overview" do (u.overview).html_safe end
+        row "Description" do (u.description).html_safe end
+        row "References" do (u.references).html_safe end
+        row :attachment_file_name
+
+      end
+      active_admin_comments
+end
 end
