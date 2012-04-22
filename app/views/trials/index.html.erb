@@ -1,11 +1,11 @@
 <div id="banner" class="prepend-top"><img src="/images/header_clinical_trials.jpg" alt="Awaken to health and happiness" /></div>
 <% @trials.each do |trial| %>
-	<div id="content" class="content prepend-top">
+	<div id="content" class="note prepend-top">
 	    <h2><%= trial.title %></h2>
 	    <p><%= truncate(trial.description, :length => 200, :separator => 'More' ).html_safe %><%= link_to 'Read More', trial %></p>
      </div>
 <% end %>
-<%= paginate @trials %>
+<p><%= paginate @trials %></p>
 	
 <!-- <%= link_to 'New Trial', new_trial_path %> -->
 

@@ -1,6 +1,6 @@
 <div id="banner" class="prepend-top"><img src="/images/header_cv_news.jpg" alt="Awaken to health and happiness" /></div>
 <% @updates.each do |update| %>
-	<div id="content" class="content prepend-top">
+	<div id="content" class="note prepend-top">
     <h2><%= update.title %></h2>
     <p><%= update.overview.html_safe %></p>
     <!--

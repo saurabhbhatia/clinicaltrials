@@ -1,20 +1,21 @@
-<div id="banner" class="prepend-top"><img src="/images/header_clinical_trials.jpg" alt="Awaken to health and happiness" /></div>
-<div id="content" class="content prepend-top">
-<p id="notice"><%= notice %></p>
-<h2><%= @trial.title %></h2>
-<p>
-  <%= @trial.description.html_safe %>
-</p>
-<p>
-<%= link_to @trial.attachment_file_name, @trial.attachment.url  %>
-</p>
-<p>
-  <% unless @trial.references.nil? %>
-  <p>References</p>
-  <%= @trial.references.html_safe %>
-  <% end %>
-</p>
-<!-- <%= link_to 'Edit', edit_trial_path(@trial) %> | -->
-<%= link_to 'Back', trials_path %>
+<div id="banner" class="prepend-top"><img src="/images/header_clinical_trials.jpg" alt="Awaken to health and happiness" />
 </div>
+<div id="content" class="note prepend-top">
+	<p id="notice">
+		<%= notice %>
+	</p>
+	<h1><%= @trial.title %></h1>
+	<p>
+		<%= @trial.description.html_safe %>
+	</p>
+	<% unless @trial.attachment_file_name.nil? %> 
+		<h2>Attachment</h2>
+		<p><%= link_to @trial.attachment_file_name, @trial.attachment.url  %></p>
+	<% end %>
 
+	<% unless @trial.references.blank? || @trial.references.nil? %>
+		<h2>References</h2>
+		<p><%= @trial.references.html_safe %></p>
+	<% end %>
+	<%= link_to 'Back', trials_path %>
+</div>

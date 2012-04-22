@@ -3,7 +3,7 @@ ActiveAdmin.register Download do
 form :html => { :multipart => true } do |f|
 f.inputs "Download" do
  f.input :title
-f.input :download_type, :as => :select, :collection => ['iRAAS Journal', 'Guidelines', 'Telma 24 X 7', 'Slide Kits', 'Patient Education Material'], :include_blank => false
+f.input :download_type, :as => :select, :collection => ['iRAAS Journal', 'Guidelines', 'Telma 24 X 7', 'Slide Kits', 'Patient Education Material', 'Video Gallery','Guideline - Antcoagulant Antiplatelet','Guideline - Arrythmias', 'Guideline - Coronary Heart Disease', 'Guideline - Coronary Interventions', 'Guideline - Diabetes', 'Guideline - Heart Disease & Women','Guideline - Heart Failure','Guideline - Hypertension'], :include_blank => false
  f.input :description, :input_html => { :class => "ckeditor" }
  f.input :attachment, :as => :file, :label => "Attachment",:hint => f.object.attachment.nil? ? f.template.content_tag(:span, "No Attachment Yet") : f.template.image_tag(f.object.attachment.url(:thumb)) 
 end

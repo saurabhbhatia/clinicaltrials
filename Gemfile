@@ -23,6 +23,7 @@ gem 'meta_where'
 gem 'meta_search'
 gem 'whenever'
 gem "mail"
+gem 'youtube_it'
 
 # Use unicorn as the web server
 # gem 'unicorn'

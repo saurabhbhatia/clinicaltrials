@@ -1,5 +1,25 @@
 <h1>Downloads</h1>
 
+<h2>Telma 24 X 7</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+
+<% @telma.each do |download| %>
+  <tr>
+<td><%= link_to download.title, download.attachment.url  %></td>
+    <td><%= download.description %></td>
+    <td><%= link_to 'Show', download %></td>
+  </tr>
+<% end %>
+</table>
+<%= paginate @telma %>
+<br />
+
 <h2>iRaas Journal</h2>
 
 <table>
@@ -39,8 +59,7 @@
 <%= paginate @guideline %>
 <br />
 
-
-<h2>Telma 24 X 7</h2>
+<h2>Guideline - Antcoagulant Antiplatelet</h2>
 
 <table>
   <tr>
@@ -49,16 +68,137 @@
     <th></th>
   </tr>
 
-<% @telma.each do |download| %>
+<% @gaa.each do |download| %>
   <tr>
 <td><%= link_to download.title, download.attachment.url  %></td>
-    <td><%= download.description %></td>
+    <td><%= download.description.html_safe %></td>
     <td><%= link_to 'Show', download %></td>
   </tr>
 <% end %>
 </table>
-<%= paginate @telma %>
+<%= paginate @gaa %>
 <br />
+
+<h2>Guideline - Arrythmias</h2>
+
+<table>
+  <tr> 
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+
+<% @ga.each do |download| %>
+  <tr> 
+<td><%= link_to download.title, download.attachment.url  %></td>
+    <td><%= download.description.html_safe %></td>
+    <td><%= link_to 'Show', download %></td>
+  </tr>
+<% end %>
+</table>
+<%= paginate @ga %>
+<br />
+
+<h2>Guideline - Coronary Heart Disease</h2>
+
+<table>
+  <tr> 
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+
+<% @gchd.each do |download| %>
+  <tr> 
+<td><%= link_to download.title, download.attachment.url  %></td>
+    <td><%= download.description.html_safe %></td>
+    <td><%= link_to 'Show', download %></td>
+  </tr>
+<% end %>
+</table>
+<%= paginate @gchd %>
+<br />
+
+<h2>Guideline Coronary Intervantions</h2>
+
+<table>
+  <tr> 
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+
+<% @gci.each do |download| %>
+  <tr>
+<td><%= link_to download.title, download.attachment.url  %></td>
+    <td><%= download.description.html_safe %></td>
+    <td><%= link_to 'Show', download %></td>
+  </tr>  
+<% end %>
+</table>
+<%= paginate @gci %>
+<br />
+
+<h2>Guideline - Diabetes</h2>
+
+<table>
+  <tr> 
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+
+<% @gd.each do |download| %>
+  <tr>  
+<td><%= link_to download.title, download.attachment.url  %></td>
+    <td><%= download.description.html_safe %></td>
+    <td><%= link_to 'Show', download %></td>
+  </tr> 
+<% end %>
+</table>
+<%= paginate @gd %>
+<br />  
+
+<h2>Guideline - Heart Disease & Women</h2>
+
+<table>
+  <tr> 
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+
+<% @ghdw.each do |download| %>
+  <tr>  
+<td><%= link_to download.title, download.attachment.url  %></td>
+    <td><%= download.description.html_safe %></td>
+    <td><%= link_to 'Show', download %></td>
+  </tr> 
+<% end %>
+</table>
+<%= paginate @ghdw %>
+<br />  
+
+<h2>Guideline - Hypertension</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+
+<% @ghf.each do |download| %>
+  <tr>
+<td><%= link_to download.title, download.attachment.url  %></td>
+    <td><%= download.description.html_safe %></td>
+    <td><%= link_to 'Show', download %></td>
+  </tr>
+<% end %>
+</table>
+<%= paginate @ghf %>
+<br />
+
 
 <h2>Slide Kits</h2>
 
@@ -90,6 +230,27 @@
   </tr>
 
 <% @pem.each do |download| %>
+  <tr>
+<td><%= link_to download.title, download.attachment.url  %></td>
+    <td><%= download.description %></td>
+    <td><%= link_to 'Show', download %></td>
+  </tr>
+<% end %>
+</table>
+<%= paginate @pem %>
+
+<br />
+
+<h2>Video Gallery</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+
+<% @vg.each do |download| %>
   <tr>
 <td><%= link_to download.title, download.attachment.url  %></td>
     <td><%= download.description %></td>

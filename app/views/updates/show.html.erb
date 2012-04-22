@@ -1,5 +1,5 @@
 <div id="banner" class="prepend-top"><img src="/images/header_cv_news.jpg" alt="Awaken to health and happiness" /></div>
-<div id="content" class="content prepend-top">
+<div id="content" class="note prepend-top">
 	<p id="notice"><%= notice %></p>
 	<h2><%= @update.title %></h2>
 
@@ -14,11 +14,15 @@
 	</p>
 	
 	<p>
+        <% unless @update.references.blank? || @update.references.nil? %>
 	  <b>References:</b>
 	  <%= @update.references.html_safe %>
+        <% end %>
 	</p>
 <p>
+ <% unless @update.attachment_file_name.nil? %>
 <%= link_to @update.attachment_file_name, @update.attachment.url  %>
+<% end %>
 </p>
 	<!-- <%= link_to 'Edit', edit_update_path(@update) %> | -->
 	<%= link_to 'Back', updates_path %>

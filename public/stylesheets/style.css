@@ -65,7 +65,15 @@ div#user-menu a { color:white; text-decoration: none; }
 div#footer { background: url(images/cloud.png) center top no-repeat; text-align: center; height: 200px; padding-top: 90px; font-family: 'Oswald', sans-serif; color:#333; }
 div#footer a { color: #85450a; text-decoration: none;  }
 /* Homepage styles */
-div.note { background:#fff; border-radius: 4px 4px 4px 4px; min-height: 269px; }
+/* div.note { background:#fff; border-radius: 4px 4px 4px 4px; min-height: 269px; } */
+div.note {
+    /* min-height: 269px; */
+    padding: 25px;
+    background: #fff;
+    -webkit-box-shadow: 3px 3px 3px rgba(0,0,0,.5);
+    -moz-box-shadow: 3px 3px 3px rgba(0,0,0,.5);
+    box-shadow: 3px 3px 3px #000;
+}
 div.note-color, div.note-color h1, div.note-color h2, div.note-color h3, div.note-color h4, div.note-color h5, div.note-color h6 { color:white !important; }
 div.note-color a { color:#fff; }
 div.note-orange { background:#cb4c00; }

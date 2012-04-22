@@ -1,7 +1,7 @@
 <div id="banner" class="prepend-top"><img src="/images/banner_event.jpg" alt="Awaken to health and happiness" /></div>
 <% @events.each do |event| %>
-	<div class="span-24 last prepend-top" style="background:#fff;border-radius:4px 4px 4px 4px;">
-		<div style="padding:15px;">
+	<div class="span-24 last prepend-top">
+		<div class="note">
 	    <h2><%= event.topic %></h2>
 	    <strong>Date:</strong> <% e = event.date %><%= e.strftime("%d %B %Y") %> - <% t = event.todate %><%= t.strftime("%d %B %Y") %><br/>
 	    <!-- 

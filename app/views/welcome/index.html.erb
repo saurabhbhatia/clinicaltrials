@@ -16,15 +16,14 @@ $(window).load(function() {
 </div>
 <div class="span-24 last prepend-top">
 	<div class="span-20">
-		<div class="span-10 note" style="min-height: 228px;">
-			<div class="content-padding">
+		<div class="span-10" style="min-height: 228px;">
+			<div class="note">
 				<h1>CV News</h1>
 				<div style="min-height: 100px;">
 					<ul id="news">
-<% @updates.each do |update| %>
-    <l1><%= truncate(update.overview, :length => 230).html_safe %></li>
-<% end %>
-
+						<% @updates.each do |update| %>
+						    <l1><%= truncate(update.overview, :length => 100).html_safe %></li>
+						<% end %>
 					</ul>
 				</div>
 				<div>					
@@ -33,22 +32,22 @@ $(window).load(function() {
 			</div>
 		</div>
 		<div class="span-10 last">
-
-    <% videotron = UnvlogIt.new(@webcasts.link) %><%= videotron.embed_html(390, 231).html_safe %>
+                 <% t = @client.video_by(@webcasts.link).thumbnails %>
+    		<%=link_to image_tag(t.third.url, :size => '390x228'), @webcasts %>
 		</div>
 		<div class="clear">&nbsp;</div>
-		<div class="span-10 note note-color note-brown">
-			<div class="content-padding">
+		<div class="span-10">
+			<div class="note note-color note-brown">
 			<h1>Register with us!</h1>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
 			<p><a href="/users/sign_up" class="button">Register</a></p>
 			</div>
 		</div>
-		<div class="span-10 last note note-color note-orange">
-			<div class="content-padding">
+		<div class="span-10 last">
+			<div class=" note note-color note-orange">
 			<h1>The iRaas Journal</h1>
 			<p><%= truncate(@iraas_journal.description, :length => 230).html_safe %> <%= link_to 'Know More', @iraas_journal  %></p>
-			<p><a href="<%= @iraas_journal.attachment.url %>" class="button">Download</a></p>
+			<p><%= link_to "Download", @iraas_journal , :class => 'button' %></p>
 			</div>
 		</div>		
 		<div class="clear">&nbsp;</div>

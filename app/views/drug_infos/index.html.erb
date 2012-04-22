@@ -29,17 +29,17 @@ ul.pagination li:before {
   </p>
 <% end %>
 
-
-
-<div id="content" class="content prepend-top">
-	<%= alphabetically_paginate(@drug_infos) %>
+<div id="content" class="span-24 last prepend-top">
+	<div class="note">
+		<%= alphabetically_paginate(@drug_infos) %>
+	</div>
 </div>		
 <% @drug_infos.each do |drug_info| %>
-	<div class="span-24 last prepend-top" style="background:#fff;border-radius:4px 4px 4px 4px;">
-		<div style="padding:15px;">
-	    <h2><%= drug_info.title %></h2>
-	    <strong>Action:</strong> <%= drug_info.action.html_safe %><br/>
-	    <%= link_to 'Show', drug_info %>
+	<div class="span-24 last prepend-top">
+		<div class="note">
+		    <h2><%= drug_info.title %></h2>
+		    <p><%= truncate(drug_info.indications, :length => 200, :separator => 'More').html_safe %></p>
+		    <p><%= link_to 'Show', drug_info %></p>
 	    </div>
     </div>	
 <% end %>
